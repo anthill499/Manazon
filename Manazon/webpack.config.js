@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./frontend/bench_bnb.jsx",
+  entry: "./frontend/manazon.jsx",
   output: {
     filename: "./bundle.js",
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
@@ -16,7 +16,6 @@ module.exports = {
 
         use: {
           loader: "babel-loader",
-
           options: {
             presets: ["@babel/env", "@babel/react"],
           },
