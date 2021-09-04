@@ -12,3 +12,199 @@ Migrating to CreateUsers (20210904192604)
   [1m[36mActiveRecord::InternalMetadata Load (4.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5785061768863806555)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-09-04 16:04:25 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 10ms (ActiveRecord: 0.0ms | Allocations: 3343)
+
+
+
+ActionController::MissingExactTemplate - StaticPagesController#root is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/a6ca331d159a8a73/variables" for ::1 at 2021-09-04 16:04:25 -0400
+Started GET "/" for ::1 at 2021-09-04 16:11:46 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 6ms (Allocations: 2113)
+
+
+
+ActionController::MissingExactTemplate - StaticPagesController#root is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/f48fbac31deda99f/variables" for ::1 at 2021-09-04 16:11:46 -0400
+Started GET "/" for ::1 at 2021-09-04 16:17:03 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.0ms | Allocations: 2933)
+
+
+
+ActionController::MissingExactTemplate - StaticPagesController#root is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/15de91d6c6e8a13a/variables" for ::1 at 2021-09-04 16:17:03 -0400
+Started POST "/__better_errors/15de91d6c6e8a13a/variables" for ::1 at 2021-09-04 16:21:21 -0400
+Started GET "/" for ::1 at 2021-09-04 16:21:22 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 2.9ms | Allocations: 296)
+  Rendered layout layouts/application.html.erb (Duration: 72.3ms | Allocations: 24378)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms | Allocations: 27386)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/config
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/images
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/javascripts
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/stylesheets
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actioncable-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/activestorage-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionview-6.1.4.1/lib/assets/compiled:
+
+Started POST "/__better_errors/33d40485138b227b/variables" for ::1 at 2021-09-04 16:21:22 -0400
+Started GET "/" for ::1 at 2021-09-04 16:21:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5641)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 5872)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/config
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/images
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/javascripts
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/stylesheets
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actioncable-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/activestorage-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionview-6.1.4.1/lib/assets/compiled:
+
+Started POST "/__better_errors/c5740f8aa8c0f9fe/variables" for ::1 at 2021-09-04 16:21:26 -0400
+Started GET "/" for ::1 at 2021-09-04 16:22:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 8870)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 9214)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/config
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/images
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/javascripts
+  /Users/anthill499/Desktop/Personal Projects/Manazon/Manazon/app/assets/stylesheets
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actioncable-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/activestorage-6.1.4.1/app/assets/javascripts
+  /Users/anthill499/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionview-6.1.4.1/lib/assets/compiled:
+  app/views/layouts/application.html.erb:10
+
+Started POST "/__better_errors/c4c631c3da8a5e68/variables" for ::1 at 2021-09-04 16:22:59 -0400
+Started GET "/" for ::1 at 2021-09-04 16:24:15 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 1.5ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 648.1ms | Allocations: 74496)
+Completed 200 OK in 657ms (Views: 651.9ms | ActiveRecord: 0.0ms | Allocations: 76904)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-09-04 16:36:40 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 7139)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 0.0ms | Allocations: 9547)
+
+
+Started GET "/" for ::1 at 2021-09-04 16:57:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 1.2ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4034)
+Completed 200 OK in 17ms (Views: 15.8ms | Allocations: 5007)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5785061768863806555)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeUsers (20210904212702)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "first_name"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "last_name"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210904212702"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5785061768863806555)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5785061768863806555)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeUsers2 (20210904213033)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210904213033"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5785061768863806555)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5785061768863806555)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeUsers3 (20210904213427)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "full_name"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210904213427"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5785061768863806555)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-09-04 17:40:51 -0400
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 1.5ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 600.9ms | Allocations: 60109)
+Completed 200 OK in 611ms (Views: 604.5ms | ActiveRecord: 0.0ms | Allocations: 62517)
+
+
+Started GET "/" for ::1 at 2021-09-04 17:41:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 439.1ms | Allocations: 55104)
+Completed 200 OK in 440ms (Views: 440.0ms | ActiveRecord: 0.0ms | Allocations: 55363)
+
+
+Started GET "/" for ::1 at 2021-09-04 17:43:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3792)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 4045)
+
+
+Started GET "/" for ::1 at 2021-09-04 17:43:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3782)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4035)
+
+
