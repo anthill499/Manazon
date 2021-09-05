@@ -85,7 +85,6 @@ input {
 
 .session-title {
   display: flex;
-  align-items: left;
 }
 
 .session-form {

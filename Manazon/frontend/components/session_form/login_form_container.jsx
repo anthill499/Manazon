@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
     password: "",
   },
 });
+
 const mapDispatchToProps = (dispatch) => ({
   processForm: (formUser) => dispatch(login(formUser)),
 });
