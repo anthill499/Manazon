@@ -1,14 +1,15 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-
+import { Route, Redirect, withRouter } from "react-router-dom";
 const App = () => (
   <div>
-    <header></header>
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <header>
+      <div>Your react is working</div>
+    </header>
+    <Route exact path="/login" component={LoginFormContainer} />
+    <Route exact path="/signup" component={SignupFormContainer} />
   </div>
 );
 

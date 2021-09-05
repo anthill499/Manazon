@@ -1,18 +1,22 @@
+import humps from "humps";
 // signup
+
 export const signup = (user) => {
+  const humpedUser = humps.decamelizeKeys(user);
   return $.ajax({
     method: "POST",
     url: "/api/users",
-    data: { user },
+    data: { user: humpedUser },
   });
 };
 
 // login
 export const login = (user) => {
+  const humpedUser = humps.decamelizeKeys(user);
   return $.ajax({
     method: "POST",
     url: "/api/session",
-    data: { user },
+    data: { user: humpedUser },
   });
 };
 

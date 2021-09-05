@@ -1,16 +1,18 @@
 import {
   RECEIVE_SESSION_ERRORS,
   RECEIVE_CURRENT_USER,
+  CLEAR_ERRORS,
 } from "../actions/session_actions";
 
-const sessionErrorsReducer = (state = {}, action) => {
-  let newState = { ...state };
+const _nullErrors = [];
+const sessionErrorsReducer = (state = _nullErrors, action) => {
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      return { ...newState, ["errors"]: action.errors };
+      return action.errors;
     case RECEIVE_CURRENT_USER:
-      delete newState["errors"];
-      return newState;
+      return _nullErrors;
+    case CLEAR_ERRORS:
+      return _nullErrors;
     default:
       return state;
   }

@@ -2,8 +2,9 @@ import * as SessionApiUtil from "../util/session_api_util";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOG_OUT = "LOG_OUT";
-export const LOG_IN = "LOG_IN";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const LOG_IN_DEMO = "LOG_IN_DEMO";
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -37,3 +38,5 @@ export const login = (user) => (dispatch) => {
     dispatch(receiveCurrentUser(currentUser))
   );
 };
+
+// export const
