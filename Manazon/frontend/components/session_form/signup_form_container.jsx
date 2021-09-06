@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
     password: "",
   },
 });
-
 const mapDispatchToProps = (dispatch) => ({
   processForm: (formUser) => dispatch(signup(formUser)),
 });

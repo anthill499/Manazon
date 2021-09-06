@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,12 @@ class NavBarSearch extends React.Component {
           Hello, {name}
           <br />
           Account {"&"} Lists
+        </div>
+        <div>
+          <Link to="/login">Log In</Link>
+        </div>
+        <div>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </div>
     );

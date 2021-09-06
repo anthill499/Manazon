@@ -12,7 +12,7 @@
 #  full_name       :string           not null
 #
 class User < ApplicationRecord
-
+    
     after_initialize :ensure_session_token
 
     validates :username, :session_token, :password_digest, :full_name, presence: true

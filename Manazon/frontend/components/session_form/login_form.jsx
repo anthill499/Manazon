@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -55,14 +55,21 @@ class LoginForm extends React.Component {
               className="session-button">
               Sign-In
             </button>
-            <p className="terms">
+            <br />
+            <div className="terms">
               By continuing, you agree to Manazon's <p> Conditions of Use</p>{" "}
               and
               <p> Privacy Notice.</p>
-            </p>
+            </div>
           </form>
         </div>
+
         <p className="form-divider">New to Manazon?</p>
+
+        <Link to="/signup">
+          <button className="demo-button">Create your Manazon Account</button>
+        </Link>
+
         <button onClick={(e) => this.loginDemo(e)} className="demo-button">
           Log In as Demo
         </button>
