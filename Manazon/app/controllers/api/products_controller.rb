@@ -8,9 +8,9 @@ class Api::ProductsController < ApplicationController
     
     # Finding specific product
     def show
-        product = Product.find(params[:id])
+        @product = Product.find(params[:id])
         render :show
     end
 
-    
+
 end
