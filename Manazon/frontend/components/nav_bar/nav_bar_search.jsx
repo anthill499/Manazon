@@ -12,10 +12,8 @@ class NavBarSearch extends React.Component {
       <div className="nav-bar-search">
         <select className="nav-bar-search-select">
           <option value="0"> All: </option>
-          <option value="1">BOOTY</option>
-          <option value="2">BUTT</option>
-          <option value="3">YEHUDA</option>
         </select>
+
         <input
           type="text"
           value={this.state.query}

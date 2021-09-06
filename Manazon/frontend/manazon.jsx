@@ -5,7 +5,20 @@ import Root from "./components/root";
 import { signup, login, logout } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  let store;
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser },
+      },
+      session: {
+        id: window.currentUser.id,
+      },
+    };
+  }
+
+  store = configureStore(preloadedState);
   const root = document.getElementById("root");
   window.signup = signup;
   window.login = login;

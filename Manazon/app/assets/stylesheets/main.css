@@ -1,20 +1,3 @@
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot");
-  src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.svg#Helvetica Neue")
-      format("svg");
-}
-
-@import url(//db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue);
-
 * {
   font-family: "Helvetica Neue";
 }
@@ -41,7 +24,17 @@ select {
 }
 
 .terms {
-  font-size: 10px;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  width: 350px;
+  max-width: 350px;
+  text-overflow: clip;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.terms p {
+  color: #0066c0;
 }
 
 .session-button {
@@ -121,6 +114,7 @@ select {
   border: 0.8px solid lightgrey;
   border-radius: 4px;
   padding-bottom: 3%;
+  display: flex;
 }
 
 .session-form,
@@ -142,17 +136,21 @@ form {
 
 #nav {
   background-color: #131921;
-  padding: 25px;
+  padding: 20px;
+  width: 120vw;
 }
 
 .nav-bar {
   display: flex;
   flex-direction: row;
+  align-self: center;
 }
 
 .nav-bar-search {
   display: flex;
   flex-direction: row;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #nav-bar-search-bar {
@@ -162,7 +160,8 @@ form {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  width: 350px;
+  width: 375px;
+  height: 40px;
 }
 
 /* .nav-bar-search-select option {

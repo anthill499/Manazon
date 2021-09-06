@@ -8,6 +8,12 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="//db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue" rel="stylesheet" type="text/css"/>
+   <% if logged_in? %>
+    <script type="text/javascript">
+      window.currentUser =
+        <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+    </script>
+   <% end %>
   </head>
 
   <body>

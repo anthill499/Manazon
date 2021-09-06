@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     
     #CHELLL
 
-    helper_method :ensure_logged_in, :logged_in?
+    helper_method :ensure_logged_in, :logged_in?, :current_user
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
     end

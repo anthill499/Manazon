@@ -56,8 +56,9 @@ class LoginForm extends React.Component {
               Sign-In
             </button>
             <p className="terms">
-              By continuing, you agree to Manazon's Conditions of Use and
-              Privacy Notice.
+              By continuing, you agree to Manazon's <p> Conditions of Use</p>{" "}
+              and
+              <p> Privacy Notice.</p>
             </p>
           </form>
         </div>
