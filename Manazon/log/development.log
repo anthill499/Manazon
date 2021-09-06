@@ -12016,3 +12016,7 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 38ms (Views: 29.4ms | ActiveRecord: 8.2ms | Allocations: 6522)
 
 
+Started POST "/" for ::1 at 2021-09-06 19:15:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
