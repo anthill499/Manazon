@@ -12,4 +12,5 @@ class Api::ProductsController < ApplicationController
         render :show
     end
 
+    
 end
