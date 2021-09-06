@@ -1,20 +1,14 @@
 import React from "react";
+import NavBarSearchContainer from "./nav_bar_search_container";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.searcbData;
   }
 
   render() {
     return (
-      <div>
-        {/* logo */}
-        <input
-          type="text"
-          value={this.state.field}
-          onChange={(e) => this.setState({ field: e.target.value })}
-        />
-        <Link to={"/login"}>Sign In</Link>
+      <div className="nav-bar">
+        <NavBarSearchContainer />
       </div>
     );
   }

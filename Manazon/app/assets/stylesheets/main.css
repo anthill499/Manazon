@@ -19,13 +19,25 @@
   font-family: "Helvetica Neue";
 }
 
-input {
-  border-width: 0.5px;
+.session-input {
+  border: 0.5px solid black;
+  border-width: 1px;
   height: 40px;
   width: 350px;
   font-size: 18px;
   padding-left: 5px;
   border-radius: 3px;
+}
+
+select {
+  border-width: 0px;
+  background-color: #e7e9ec;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-right-width: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: 45px;
+  padding: 5px;
 }
 
 .terms {
@@ -51,10 +63,28 @@ input {
     rgba(240, 194, 76, 0.9) 60%
   );
 }
+.nav-bar-search-button {
+  border-width: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left-width: 0px;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-top-color: rgb(168, 135, 52);
+  border-right-color: rgb(156, 126, 49);
+  border-bottom-color: rgb(132, 106, 41);
+  border-left-color: rgb(156, 126, 49);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(240, 194, 76, 0.5) 5%,
+    rgba(240, 194, 76, 0.75) 30%,
+    rgba(240, 194, 76, 0.9) 60%
+  );
+}
 
 .demo-button {
   width: 99%;
-  background-color: #e7e9ec;
+  background-color: #a6a8ac;
   border-color: #adb1b8 #a2a6ac #8d9096;
   min-height: 10%;
   height: 6vh;
@@ -105,7 +135,36 @@ form {
   align-self: flex-start;
 }
 
-.session-input:focus {
+.nav-bar-search-select:focus,
+.nav-bar-search-bar:focus {
   border-color: #e77600;
-  box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
+
+#nav {
+  background-color: #131921;
+  padding: 25px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bar-search {
+  display: flex;
+  flex-direction: row;
+}
+
+#nav-bar-search-bar {
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  width: 350px;
+}
+
+/* .nav-bar-search-select option {
+  width: 100px;
+} */
