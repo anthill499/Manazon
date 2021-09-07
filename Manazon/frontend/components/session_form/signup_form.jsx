@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
               <p> Privacy Notice.</p>
             </div>
 
-            <hr class="solid"></hr>
+            <hr className="solid"></hr>
             <p id="already-have-account">
               <div>Already have an account?</div>
               <div>
