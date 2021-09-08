@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import pin from "../../../app/assets/images/logo/pin-removebg-preview.png";
-import cart from "../../../app/assets/images/logo/cart.png";
-import mag from "../../../app/assets/images/logo/mag.png";
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +14,7 @@ class NavBarSearch extends React.Component {
       <div className="nav-bar-search">
         <div id="select-address">
           <div>
-            <img src={pin} id="nav-pin" />
+            <img src={window.pin} id="nav-pin" />
           </div>
           <div>
             <p className="nav-grey">Hello</p>
@@ -38,7 +35,7 @@ class NavBarSearch extends React.Component {
           />
           {/* add functionality, database requests go here */}
           <button className="nav-bar-search-button">
-            <img src={mag} id="mag" />
+            <img src={window.mag} id="mag" />
           </button>
         </div>
 
@@ -55,7 +52,7 @@ class NavBarSearch extends React.Component {
         <div>
           <div id="cart-item-count">0</div>
           Cart
-          <img src={cart} id="nav-cart" />
+          <img src={window.cart} id="nav-cart" />
         </div>
       </div>
     );

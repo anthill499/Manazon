@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import invertLogo from "../../../app/assets/images/logo/invertlogo1.png";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +42,7 @@ class LoginForm extends React.Component {
     return (
       <div>
         <div className="logo-div">
-          <img src={invertLogo} className="inverted-logo" />
+          <img src={window.logo} className="inverted-logo" />
         </div>
         <div className="form-container">
           <div className="session-form">
