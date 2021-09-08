@@ -27,6 +27,7 @@
     "babel-loader": "^8.2.2",
     "classnames": "^2.3.1",
     "file-loader": "^6.2.0",
+    "heroku-cli": "^7.0.9",
     "humps": "^2.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
