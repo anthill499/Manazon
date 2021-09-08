@@ -1,5 +1,9 @@
 * {
-  font-family: "Helvetica Neue";
+  font-family: arial, sans-serif;
+}
+
+body {
+  background-image: url("../images/groomingbackground.png");
 }
 
 .session-input {
@@ -27,6 +31,7 @@ select {
   border-bottom-left-radius: 6px;
   width: 45px;
   padding: 5px;
+  height: 5.7vh;
 }
 
 .terms {
@@ -68,25 +73,8 @@ select {
   /* justify-content: flex-start; */
   padding-right: 100px;
 }
-.nav-bar-search-button {
-  border-width: 0px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-left-width: 0px;
-  border-color: #a88734 #9c7e31 #846a29;
-  border-top-color: rgb(168, 135, 52);
-  border-right-color: rgb(156, 126, 49);
-  border-bottom-color: rgb(132, 106, 41);
-  border-left-color: rgb(156, 126, 49);
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(240, 194, 76, 0.5) 5%,
-    rgba(240, 194, 76, 0.75) 30%,
-    rgba(240, 194, 76, 0.9) 60%
-  );
-}
-.form-divider::after {
+
+/* .form-divider::after {
   content: "";
   width: 100%;
   display: block;
@@ -95,8 +83,9 @@ select {
   position: absolute;
   top: 50%;
   margin-top: -1px;
-  /* z-index: 1; */
-}
+  z-index: 1;
+} */
+
 .demo-button {
   width: 99%;
   background: #e7e9ec;
@@ -175,6 +164,8 @@ form {
   flex-direction: row;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 #nav-bar-search-bar {
@@ -184,10 +175,66 @@ form {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  width: 375px;
-  height: 40px;
+  max-width: 100%;
+  height: 5.5vh;
+  width: 600px;
 }
 
-/* .nav-bar-search-select option {
+.nav-bar-search-button {
+  border-width: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left-width: 0px;
+  background-color: #febd69;
+  height: 5.7vh;
+}
+#nav-bar-search-group {
+  display: inline-block;
+}
+
+.mapped-products-index {
+  display: flex;
+  list-style: none;
+}
+
+#amazon-logo {
+  width: 120px;
+  object-fit: cover;
+  max-height: 42px;
+  margin-right: 15px;
+}
+
+#nav-pin,
+#nav-cart {
+  width: 20px;
+  /* object-fit: cover; */
+  filter: invert(100%);
+  max-height: 20px;
+  margin-right: 15px;
+}
+
+.inverted-logo {
+  position: absolute;
+  left: 45%;
+  object-fit: cover;
+  margin: -25px 0 0 -25px;
+}
+
+.logo-div {
+  max-width: 200px;
+  max-height: 180px;
   width: 100px;
-} */
+  height: 100px;
+  overflow: hidden;
+}
+
+#categories-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black;
+  color: #f3f3f3;
+  background-color: rgb(55, 71, 90);
+  height: 4vh;
+  border: 0.5px black;
+}

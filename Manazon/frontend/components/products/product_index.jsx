@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../nav_bar/nav_bar";
 import ProductIndexItem from "./product_index_items";
+import NavBarCategories from "../nav_bar/nav_bar_categories";
 class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,10 @@ class ProductIndex extends React.Component {
         <header id="nav">
           <NavBar />
         </header>
-        <div>{mappedProducts}</div>
+        <div>
+          <NavBarCategories />
+        </div>
+        <div className="mapped-products-index">{mappedProducts}</div>
       </div>
     );
   }

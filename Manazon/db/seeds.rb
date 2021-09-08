@@ -16,6 +16,12 @@ demoUser = User.create!(
   username: "userdemo321",
   full_name: "Demo User")
 
+richard = User.create!(
+  email: "rzleu123@gmail.com",
+  password: "password",
+  username: "rzleu123",
+  full_name: "Richard Leung")
+
 product1 = Product.create!(
   title: "Hair Clippers",
   description: "Cordless Convenience",
@@ -27,10 +33,10 @@ product2 = Product.create!(
   price: 25.99,
   inventory: 75,)
 product3 = Product.create!(
-  title: "Beard Cream",
-  description: "Best Experience Ever",
-  price: 25.99,
-  inventory: 75,)
+  title: "Fullstack Shaver",
+  description: "One of the craziest things in the world",
+  price: 45.99,
+  inventory: 1000,)
 product4 = Product.create!(
   title: "Black Pomade",
   description: "Amazing",
@@ -47,3 +53,26 @@ product6 = Product.create!(
   price: 9.99,
   inventory: 1000);
 
+product7 = Product.create!(
+  title: "Men's AM moisturizer",
+  description: "Made from fresh eucalyptus leaves",
+  price: 9.99,
+  inventory: 500); 
+
+product8 = Product.create!(
+  title: "Men's PM moisturizer",
+  description: "Made from fresh tea leaves",
+  price: 12.99,
+  inventory: 500); 
+
+product9 = Product.create!(
+  title: "razor blades",
+  description: "Stainless steel, state of the art material",
+  price: 24.99,
+  inventory: 350); 
+
+product10 = Product.create!(
+  title: "hair spray",
+  description: "750ml of hair spray lol",
+  price: 25.99,
+  inventory: 200); 
