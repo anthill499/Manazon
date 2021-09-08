@@ -9,13 +9,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development",
+    "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack",
     "build": "webpack —mode=production"
   },
   "engines": {
-    "node": "{node -v}",
-    "npm": "{npm -v}"
+    "node": "10.13.0",
+    "npm": "7.20.5"
   },
   "keywords": [],
   "author": "",
