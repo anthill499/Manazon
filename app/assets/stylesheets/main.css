@@ -293,7 +293,33 @@ form {
   padding-left: 14px;
   top: 17px;
 }
+.nav-modal-div {
+  position: absolute;
 
-#modal-list {
-  display: flex;
+  border: 1px solid black;
+  padding: 30px;
+  background-color: rgb(235, 237, 237);
+  top: 9vh;
+  z-index: 2;
+  right: 14vw;
+}
+
+.modal-trigger {
+  visibility: hidden;
+}
+
+.modal-trigger:hover {
+  visibility: visible;
+}
+
+.modal-content {
+  color: black;
+}
+
+#pointer {
+  border: solid 10px transparent;
+  border-right-color: rgb(235, 237, 237);
+  position: absolute;
+  margin: -50px 0px 0 90px;
+  transform: rotate(90deg);
 }

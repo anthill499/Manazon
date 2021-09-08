@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NavBarModalContainer from "./nav_modal_container";
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -39,9 +40,12 @@ class NavBarSearch extends React.Component {
           </button>
         </div>
 
-        <div>
+        <div id="modal-trigger">
           <p className="nav-grey">Hello, {name}</p>
           Account {"&"} Lists
+          <div className="nav-modal-div">
+            <NavBarModalContainer />
+          </div>
         </div>
         <div>
           <p className="nav-grey">Returns</p>

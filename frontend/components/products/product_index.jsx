@@ -28,9 +28,7 @@ class ProductIndex extends React.Component {
         <div>
           <NavBarCategories />
         </div>
-        <div>
-          <NavBarModalContainer />
-        </div>
+        <div>{/* <NavBarModalContainer /> */}</div>
         <ProductImports />
         {/* <div className="mapped-products-index">{mappedProducts}</div> */}
       </div>
