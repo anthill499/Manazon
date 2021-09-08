@@ -47,6 +47,7 @@ class LoginForm extends React.Component {
         </div>
         <div className="form-container">
           <div className="session-form">
+            <br />
             <h1 className="session-title">Sign-In</h1>
             <form>
               <label htmlFor="email" className="session-label">
@@ -81,10 +82,13 @@ class LoginForm extends React.Component {
                 and
                 <p> Privacy Notice.</p>
               </div>
+              <br />
             </form>
           </div>
 
-          <p className="form-divider">New to Manazon?</p>
+          <p className="form-divider">
+            <span>New to Manazon?</span>
+          </p>
 
           <Link to="/signup">
             <button className="demo-button">Create your Manazon Account</button>

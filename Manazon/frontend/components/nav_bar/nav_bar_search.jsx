@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import pin from "../../../app/assets/images/logo/pin-removebg-preview.png";
 import cart from "../../../app/assets/images/logo/cart.png";
+import mag from "../../../app/assets/images/logo/mag.png";
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -11,23 +12,17 @@ class NavBarSearch extends React.Component {
   render() {
     const user = this.props.currentUser;
     const name = user ? user.fullName.split(" ")[0] : "Sign in";
-    const loginButtons = this.props.currentUser ? null : (
-      <div>
-        <div>
-          <Link to="/login">Log In</Link>
-        </div>
-        <div>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      </div>
-    );
+
     return (
       <div className="nav-bar-search">
-        <div>
-          <img src={pin} id="nav-pin" />
-          Hello
-          <br />
-          Select your address
+        <div id="select-address">
+          <div>
+            <img src={pin} id="nav-pin" />
+          </div>
+          <div>
+            <p className="nav-grey">Hello</p>
+            Select your address
+          </div>
         </div>
 
         <div id="nav-bar-search-group">
@@ -42,28 +37,26 @@ class NavBarSearch extends React.Component {
             id="nav-bar-search-bar"
           />
           {/* add functionality, database requests go here */}
-          <button className="nav-bar-search-button">Search</button>
+          <button className="nav-bar-search-button">
+            <img src={mag} id="mag" />
+          </button>
         </div>
-        {user && <button onClick={(e) => this.props.logout(e)}>Log Out</button>}
 
         <div>
-          Hello, {name}
-          <br />
+          <p className="nav-grey">Hello, {name}</p>
           Account {"&"} Lists
         </div>
-
         <div>
-          Returns
-          <br />
+          <p className="nav-grey">Returns</p>
+          {/* <br /> */}
           {"&"} Orders
         </div>
 
         <div>
+          <div id="cart-item-count">0</div>
           Cart
           <img src={cart} id="nav-cart" />
         </div>
-
-        <div>{loginButtons}</div>
       </div>
     );
   }

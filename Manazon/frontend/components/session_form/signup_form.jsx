@@ -40,6 +40,7 @@ class SignupForm extends React.Component {
         </div>
         <div className="form-container">
           <div className="session-form">
+            <br />
             <h1 className="session-title">Create Account</h1>
             <form onSubmit={(e) => this.handleSubmit(e)}>
               <label className="session-label">Your Name</label>
@@ -67,6 +68,7 @@ class SignupForm extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput("password")}
                 className="session-input"
+                placeholder="At least 6 characters"
               />
               <br />
               {this.renderErrors()}
@@ -88,6 +90,7 @@ class SignupForm extends React.Component {
                 </div>
               </div>
             </form>
+            <br />
           </div>
         </div>
       </div>

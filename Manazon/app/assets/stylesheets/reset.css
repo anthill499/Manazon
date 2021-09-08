@@ -103,6 +103,7 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
   font-family: "Helvetica Neue";
+  background-repeat: no-repeat;
 }
 /* HTML5 display-role reset for older browsers */
 article,
