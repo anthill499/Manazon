@@ -3,3 +3,8 @@ require_relative "application"
 
 # Initialize the Rails application.
 Rails.application.initialize!
+
+# convert snake_case to camelCase
+Jbuilder.key_format camelize: :lower
+
+# JSON.deep_transform_keys! { |key| key.underscore }
