@@ -2,9 +2,9 @@
   font-family: arial, sans-serif;
 }
 
-/* body {
+body {
   overflow-x: hidden;
-} */
+}
 
 #select-address {
   display: flex;
@@ -31,7 +31,7 @@
 select {
   border-width: 0px;
   background-color: #e7e9ec;
-  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-color: #adb1b8 #a1a6ac #8d9096;
   border-right-width: 0px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -264,29 +264,38 @@ form {
 }
 
 .background-img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
+  flex-shrink: 1;
+  width: 100%;
+  max-height: 80%;
   -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent);
   mask-image: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  align-content: center;
 }
+
 #swipers {
   position: absolute;
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
   margin: auto;
-  top: 25%;
+  top: 15%;
   left: 1vw;
-  gap: 75vw;
+  gap: 80vw;
 }
+
 .swipe-icons {
   display: flex;
-  max-width: 150px;
-  max-width: 150px;
+  max-width: 120px;
+  max-width: 120px;
   cursor: pointer;
   padding: 0px;
   filter: invert(75%);
+  z-index: 5;
 }
 
 #swipe-left {
@@ -331,15 +340,82 @@ form {
   transform: rotate(90deg);
 }
 
-.back-to-top {
-  background-color: #37475a;
-  padding-top: 35px;
-  text-align: center;
-  top: 50%;
-  border: none;
+#import-div {
+  position: relative;
+}
+.product-showings-group {
+  display: flex;
+  position: relative;
+  gap: 20px;
+  left: 2.5%;
+  top: 60%;
+  padding-top: 350px;
 }
 
+.product-group {
+  background-color: white;
+  height: 60vh;
+  width: 30vw;
+  display: flex;
+  z-index: 3;
+  border: none;
+  border-radius: 2px;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+.dumbbells {
+  max-width: 10vw;
+  max-height: 30vh;
+}
+
+.four-pics-group {
+  display: flex;
+  gap: 50px;
+}
+
+#index-title {
+  position: absolute;
+  z-index: 5;
+  color: #febd69;
+  font-style: oblique;
+  /* font-weight: 900; */
+  font-size: larger;
+  left: 250px;
+  top: 60px;
+  text-shadow: 1px 1px 2px black;
+}
+
+footer {
+  border: 5px solid black;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.back-to-top {
+  margin-bottom: 40px;
+  background-color: #37475a;
+  margin-bottom: 0px;
+}
+.back-to-top p {
+  display: block;
+  text-align: center;
+  color: white;
+  padding: 15px 0;
+  line-height: 19px;
+  font-size: 13px;
+}
 .extra-links {
   background-color: #232f3e;
   padding: 100px;
+  display: flex;
+  color: white;
+}
+
+.extra-links-two {
+  background-color: #131921;
+  width: 120vw;
+  height: 25vh;
+  color: white;
 }

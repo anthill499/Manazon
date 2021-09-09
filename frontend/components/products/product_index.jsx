@@ -20,21 +20,64 @@ class ProductIndex extends React.Component {
           return <ProductIndexItem product={product} key={idx} />;
         });
     return (
-      <div>
-        <header id="nav">
-          <NavBar />
-        </header>
+      <>
         <div>
-          <NavBarCategories />
+          <header id="nav">
+            <NavBar />
+          </header>
+          <div>
+            <NavBarCategories />
+          </div>
+          <div>
+            <ProductImports />
+          </div>
+          {/* <div className="mapped-products-index">{mappedProducts}</div> */}
         </div>
-        <div>{/* <NavBarModalContainer /> */}</div>
-        <ProductImports />
-        <div className="mapped-products-index">{mappedProducts}</div>
-        <footer>
-          <div className="back-to-top">Back to top</div>
-          <div className="extra-links">etc links</div>
+        <footer id="footer">
+          <div className="back-to-top">
+            <p>Back to top</p>
+          </div>
+          <div className="extra-links">
+            <div>
+              <h3>Get to know us!</h3>
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Make money with us</h3>
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Manazon Payment Products</h3>
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Let us help you</h3>
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+              </ul>
+            </div>
+          </div>
+          <div className="extra-links-two"> pls work </div>
         </footer>
-      </div>
+      </>
     );
   }
 }

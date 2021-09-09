@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class NavBarModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.hidden;
+    this.state = { ...this.props.hidden };
   }
 
   componentWillUnmount() {

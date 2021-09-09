@@ -23,5 +23,6 @@ rm_array.each do |product|
     title: product["title"],
     description: "this works",
     price: product["prices"]["current_price"],
-    inventory: product["reviews"]["total_reviews"])
+    inventory: product["reviews"]["total_reviews"],
+    rating: product["reviews"]["stars"])
 end
