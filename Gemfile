@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.3'
 
+gem 'dotenv-rails'
 gem 'faker'
 gem 'rest-client'
 gem 'jquery-rails'
