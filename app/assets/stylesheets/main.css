@@ -2,9 +2,9 @@
   font-family: arial, sans-serif;
 }
 
-body {
+/* body {
   overflow-x: hidden;
-}
+} */
 
 #select-address {
   display: flex;
@@ -20,6 +20,7 @@ body {
   padding-left: 5px;
   border-radius: 3px;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .session-input:focus {
@@ -198,6 +199,10 @@ form {
 .mapped-products-index {
   display: flex;
   list-style: none;
+  position: absolute;
+  top: 20vh;
+  color: white;
+  font-size: 8px;
 }
 
 #amazon-logo {
@@ -244,10 +249,11 @@ form {
   justify-content: space-around;
   border: 1px solid black;
   color: #f3f3f3;
-  background-color: rgb(55, 71, 90);
+  background-color: #232f3e;
   height: 5vh;
   border: 0.5px black;
   align-items: center;
+  cursor: pointer;
 }
 
 .hovered-category:hover {
@@ -280,6 +286,7 @@ form {
   max-width: 150px;
   cursor: pointer;
   padding: 0px;
+  filter: invert(75%);
 }
 
 #swipe-left {
@@ -322,4 +329,17 @@ form {
   position: absolute;
   margin: -50px 0px 0 90px;
   transform: rotate(90deg);
+}
+
+.back-to-top {
+  background-color: #37475a;
+  padding-top: 35px;
+  text-align: center;
+  top: 50%;
+  border: none;
+}
+
+.extra-links {
+  background-color: #232f3e;
+  padding: 100px;
 }

@@ -18,9 +18,6 @@ richard = User.create!(
 
 rm = RestClient.get "https://amazon-products1.p.rapidapi.com/search?country=US&query=Macbook%2BPro&page=1&rapidapi-key=#{ENV['API_KEY']}"
 rm_array = JSON.parse(rm)["results"]
-User.destroy_all
-Product.destroy_all
-
 rm_array.each do |product| 
   Product.create!(
     title: product["title"],
