@@ -1,8 +1,8 @@
 import ProductIndex from "./product_index";
 import { connect } from "react-redux";
 import { fetchProduct, fetchProducts } from "../../actions/products_actions";
-const mapStateToProps = ({ entities: { products } }) => ({
-  allProducts: Object.values(products),
+const mapStateToProps = (state) => ({
+  allProducts: Object.values(state.entities.products),
 });
 
 const mapDispatchToProps = (dispatch) => ({

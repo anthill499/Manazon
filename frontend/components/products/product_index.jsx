@@ -14,12 +14,12 @@ class ProductIndex extends React.Component {
   }
 
   render() {
+    debugger;
     const mappedProducts = !this.props.allProducts
       ? null
       : this.props.allProducts.map((product, idx) => {
           return <ProductIndexItem product={product} key={idx} />;
         });
-
     return (
       <div>
         <header id="nav">
@@ -30,7 +30,7 @@ class ProductIndex extends React.Component {
         </div>
         <div>{/* <NavBarModalContainer /> */}</div>
         <ProductImports />
-        {/* <div className="mapped-products-index">{mappedProducts}</div> */}
+        <div className="mapped-products-index">{mappedProducts}</div>
       </div>
     );
   }
