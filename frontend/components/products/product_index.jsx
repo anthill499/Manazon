@@ -1,9 +1,6 @@
 import React from "react";
-import NavBar from "../nav_bar/nav_bar";
 import ProductIndexItem from "./product_index_items";
-import NavBarCategories from "../nav_bar/nav_bar_categories";
 import ProductImports from "./product_imports";
-import NavBarModalContainer from "../nav_bar/nav_modal_container";
 class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -22,16 +19,7 @@ class ProductIndex extends React.Component {
     return (
       <>
         <div>
-          <header id="nav">
-            <NavBar />
-          </header>
-          <div>
-            <NavBarCategories />
-          </div>
-          <div>
-            <ProductImports />
-          </div>
-          {/* <div className="mapped-products-index">{mappedProducts}</div> */}
+          <ProductImports />
         </div>
         <footer id="footer">
           <div className="back-to-top">

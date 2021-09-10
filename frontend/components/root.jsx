@@ -7,7 +7,7 @@ const Root = ({ store }) => (
   // destructured store from props.store
   <Provider store={store}>
     <HashRouter>
-      <App />
+      <App store={store} />
     </HashRouter>
   </Provider>
 );
