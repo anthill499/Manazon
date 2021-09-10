@@ -22,6 +22,12 @@ module.exports = {
         type: "asset/resource",
       },
       {
+        test: /\.(woff|woff2|ttf)$/,
+        use: {
+          loader: "url-loader",
+        },
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         loader: "file-loader",
       },

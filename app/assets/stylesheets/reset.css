@@ -1,19 +1,10 @@
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot");
-  src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.svg#Helvetica Neue")
-      format("svg");
-}
+@import url("../fonts/Amazon-Ember-Medium.woff");
 
-@import url(//db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue);
+@font-face {
+  font-family: "Ember";
+  src: url("Amazon-Ember-Medium.ttf") format("truetype")
+    url("Amazon-Ember-Medium.woff") format("woff");
+}
 
 html,
 body,
@@ -102,9 +93,11 @@ video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
-  font-family: "Helvetica Neue";
+  /* font-family: "Helvetica Neue"; */
+  font-family: "Ember";
   background-repeat: no-repeat;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

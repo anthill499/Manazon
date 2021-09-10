@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class NavBarModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...this.props.hidden };
+    this.state = { hidden: true };
   }
 
   componentWillUnmount() {
@@ -13,28 +13,31 @@ class NavBarModal extends React.Component {
 
   render() {
     const button1 = this.props.currentUser ? (
-      <button>
-        <li onClick={(e) => this.props.logout(e)}>Sign Out</li>
-      </button>
+      <div className="auth-modal">
+        <button onClick={(e) => this.props.logout(e)}> Sign Out</button>
+      </div>
     ) : (
-      <div>
-        <button>
-          <Link to="/login">Sign In</Link>
-        </button>
-        <button>
-          <Link to="/signup">Sign Up</Link>
-        </button>
+      <div className="auth-modal">
+        <Link to="/login">Sign In</Link>
+        <Link to="/signup">Sign Up</Link>
       </div>
     );
 
     return (
-      <div>
+      <div id="modal-hider">
         <div id="pointer"></div>
         <div className="nav-bar-login">
           <div className="modal-signin">{button1}</div>
           <div id="modal-list">
             <div className="modal-content">
-              <p>Your Account</p>
+              <h2>Your Account</h2>
+              <ul>
+                <li>Account</li>
+                <li>Orders</li>
+                <li>Recommendations</li>
+                <li>Browsing History</li>
+                <li>Watchlist</li>
+              </ul>
             </div>
           </div>
         </div>

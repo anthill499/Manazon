@@ -44,7 +44,7 @@ group :development do
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'better_errors'
-  # gem 'snaky_camel'
+  gem 'snaky_camel'
 end
 
 group :test do

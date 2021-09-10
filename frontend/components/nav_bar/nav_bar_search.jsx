@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBarModalContainer from "./nav_modal_container";
+
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.formData;
+    this.state = Object.assign(this.props.formData, { hidden: false });
+  }
+
+  handleFocusOrBlur(e) {
+    const newState = !this.state.hidden;
+    this.setState({ hidden: newState });
   }
 
   render() {
@@ -40,12 +46,14 @@ class NavBarSearch extends React.Component {
           </button>
         </div>
 
-        <div id="modal-trigger">
-          <p className="nav-grey">Hello, {name}</p>
-          Account {"&"} Lists
-          <div className="nav-modal-div">
-            <NavBarModalContainer />
+        <div id="modal-trigger" onClick={(e) => this.handleFocusOrBlur(e)}>
+          <div id="account-lists">
+            <div>
+              <p className="nav-grey">Hello, {name}</p>
+            </div>
+            <div>Account {"&"} Lists</div>
           </div>
+          {!this.state.hidden ? null : <NavBarModalContainer />}
         </div>
         <div>
           <p className="nav-grey">Returns</p>

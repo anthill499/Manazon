@@ -3,7 +3,6 @@ import NavBarModal from "./nav_modal";
 import { logout } from "../../actions/session_actions";
 const mapStateToProps = ({ session, entities: { users } }) => ({
   currentUser: users[session.id],
-  hidden: true,
 });
 
 const mapDispatchToProps = (dispatch) => ({
