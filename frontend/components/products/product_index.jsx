@@ -19,6 +19,7 @@ class ProductIndex extends React.Component {
     return (
       <>
         <div>
+          <div>{mappedProducts}</div>
           <ProductImports />
         </div>
         <footer id="footer">
