@@ -482,3 +482,38 @@ a:visited {
   margin: 10px;
   margin-left: 0px;
 }
+
+.product-wrapper img {
+  display: block;
+  max-width: 700px;
+  max-height: 700px;
+  border: 1px solid black;
+  margin-left: 60px;
+}
+
+.product-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.product-checkout-box {
+  border: 0.5px solid grey;
+}
+
+.product-description-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 20px;
+}
+
+.product-title {
+  font-size: 25px;
+}
+
+#amazon-ad {
+  vertical-align: top;
+  display: flex;
+  margin: auto;
+}
