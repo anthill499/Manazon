@@ -31,6 +31,14 @@ class ProductProfile extends React.Component {
               <div> | </div>
               <div className="pay-later-wrapper">20 answered questions</div>
             </div>
+            <div id="choice">
+              <div className="manazons-choice">
+                <div>
+                  Manazon's <span>Choice</span>
+                </div>
+              </div>
+              <div className="choice-triangle"></div>
+            </div>
             <div>
               <hr />
             </div>
