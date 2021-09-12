@@ -1,6 +1,7 @@
 import React from "react";
 import ProductIndexItem from "./product_index_items";
 import ProductImports from "./product_imports";
+import ProductImportsContainer from "./product_imports_container";
 class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class ProductIndex extends React.Component {
     return (
       <>
         <div>
-          <ProductImports />
+          <ProductImportsContainer />
         </div>
       </>
     );

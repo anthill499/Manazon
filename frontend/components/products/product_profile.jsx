@@ -10,10 +10,6 @@ class ProductProfile extends React.Component {
     this.props.fetchProducts();
   }
 
-  // componentWillUnmount() {
-  //   this.props.fetchProduct(this.props.match.params.productId);
-  // }
-
   render() {
     if (!this.props.product) return null;
     // debugger;

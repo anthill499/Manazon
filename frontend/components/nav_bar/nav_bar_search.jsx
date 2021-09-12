@@ -16,7 +16,7 @@ class NavBarSearch extends React.Component {
   render() {
     const user = this.props.currentUser;
     const name = user ? user.fullName.split(" ")[0] : "Sign in";
-
+    const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
         <div id="select-address">
@@ -24,7 +24,7 @@ class NavBarSearch extends React.Component {
             <img src={window.pin} id="nav-pin" />
           </div>
           <div>
-            <p className="nav-grey">Hello</p>
+            <p className="nav-grey">{helloOrDeliver}</p>
             Select your address
           </div>
         </div>

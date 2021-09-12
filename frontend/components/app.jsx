@@ -62,13 +62,13 @@ const App = ({ store }) => {
           </div>
 
           <div>
-            <h2>Let Us Help You</h2>
+            <h2>My favorite things</h2>
             <ul>
-              <li>Amazon and COVID-19</li>
-              <li>Your Account</li>
-              <li>Your Orders</li>
-              <li>Shipping Rates {"&"} Policies</li>
-              <li>Amazon Prime</li>
+              <li>Music Production</li>
+              <li>Hot Pot</li>
+              <li>Working Out</li>
+              <li>App Academy Cohort Mates</li>
+              <li>Hiking</li>
             </ul>
           </div>
 
@@ -86,9 +86,9 @@ const App = ({ store }) => {
         <div className="extra-links-two">
           <ul>
             <li>Conditions of Use</li>
-            <li>Privary Notice</li>
+            <li>Privacy Notice</li>
             <li>Interest-Based Ads©</li>
-            <li>2021, Manazon.heroku.app, Inc. or its affiliates</li>
+            <li>2021, Manazon, Inc. or its affiliates</li>
           </ul>
         </div>
       </footer>
