@@ -1,5 +1,5 @@
 import React from "react";
-
+import LockIcon from "@material-ui/icons/Lock";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ class ProductProfile extends React.Component {
   render() {
     if (!this.props.product) return null;
     // debugger;
-    const { title, price, photoUrl, description } = this.props.product;
+    const { title, price, photoUrl, description, rating } = this.props.product;
     return (
       <div>
         <img src={window.ad} id="amazon-ad" />
@@ -26,10 +26,13 @@ class ProductProfile extends React.Component {
           <div className="product-description-box">
             <div className="product-title">{title}</div>
             <div id="ratings-wrapper">
-              <div>⭐⭐⭐⭐⭐</div>
+              <div className="actual-stars">⭐⭐⭐⭐⭐</div>
               <div className="pay-later-wrapper">430 ratings</div>
               <div> | </div>
               <div className="pay-later-wrapper">20 answered questions</div>
+            </div>
+            <div>
+              <hr />
             </div>
             <div className="price-container-wrapper">
               <div className="price-container">
@@ -58,6 +61,16 @@ class ProductProfile extends React.Component {
               <div className="description-title">About this item</div>
               <div className="actual-description">{description}</div>
             </div>
+            <div className="new-and-used">
+              <div className="green">
+                New {"&"} Used from
+                <span className="new-and-used-img">
+                  {" "}
+                  ${Math.ceil(price * 0.66)}
+                </span>
+              </div>
+              <img src={window.primelogo} id="prime-logo" />
+            </div>
           </div>
           <div className="product-checkout-box">
             <span className="actual-price">${price}</span>
@@ -66,14 +79,21 @@ class ProductProfile extends React.Component {
               <div className="price-label-and">{"&"}</div>
               <div className="price-label">FREE Returns</div>
             </div>
-            <div>In Stock</div>
-            <button>Add to cart</button>
-            <button>Buy now</button>
-            <div>Secure Transaction</div>
+            <div className="inventory-level">In Stock.</div>
+            <div className="product-checkout-buttons">
+              <button className="add-to-cart-button">Add to cart</button>
+              <button>Buy now</button>
+            </div>
+            <div className="secure-transaction-wrapper">
+              <LockIcon className="lock-icon" />
+              <div className="green">Secure Transaction</div>
+            </div>
+            <div>Ships from and sold by Manazon.com.</div>
             <div>
-              Ships from and sold by Manazon.com.
-              <br />
-              Return policy: Eligible for Return, Refund or Replacement
+              <div>Return policy:</div>
+              <span className="green">
+                Eligible for Return, Refund or Replacement
+              </span>
             </div>
             <div>
               Shows what's inside and can’t be hidden. If this is a gift,
