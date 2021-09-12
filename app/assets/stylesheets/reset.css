@@ -1,11 +1,15 @@
 @import url("../fonts/Amazon-Ember-Medium.woff");
-
+@import url("../fonts/AmazonEmberDisplay_Rg.ttf");
 @font-face {
   font-family: "Ember";
   src: url("Amazon-Ember-Medium.ttf") format("truetype")
     url("Amazon-Ember-Medium.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Light";
+  src: url("AmazonEmberDisplay_Rg.ttf") format("truetype");
+}
 html,
 body,
 div,

@@ -43,13 +43,12 @@ product2 = Product.create!(
   inventory: "100",
   rating: "5",
 )
-
 product2.photo.attach(io: URI.open("https://manazon-dev.s3.amazonaws.com/squatrack.png"), filename: "squatrack.png")
 
 product3 = Product.create!(
   title: "Flowflex SelectTech Dumbbell",
   description: "Each dumbbell adjusts from 5 to 52.5 pounds; adjusts in 2.5-pound increments up to the first 25 pounds Lets you rapidly switch from one exercise to the next. Combines 15 sets of weights into one, using a unique dial system. Eliminates the need for multiple dumbbells cluttering your workout space. Two year warranty on weight plates and parts",
-  price: "399.00",
+  price: "399.99",
   inventory: "150",
   rating: "5",
 )
@@ -90,7 +89,7 @@ product7.photo.attach(io: URI.open("https://manazon-dev.s3.amazonaws.com/nikebag
 product8 = Product.create!(
   title: "Men's Powerlift 4 Weightlifting Shoe",
   description: "Take your weight training sessions to new heights. Made for stability, these men's weightlifting shoes have a narrow fit, a midsole wedge and a wide instep strap for complete lockdown. A rubber outsole keeps you firmly planted when lifting. The lightweight upper is made from durable canvas.",
-  price: "199.00",
+  price: "199.99",
   inventory: "125",
   rating: "4",
 )
@@ -122,7 +121,7 @@ product11.photo.attach(io: URI.open("https://manazon-dev.s3.amazonaws.com/benchp
 product12 = Product.create!(
   title: "BlenderBottle Classic Shaker Bottle Perfect for Protein Shakes and Pre Workout, 28-Ounce, Black",
   description: "The BlenderBottle Classic 28-Ounce Shaker Cup makes it easy to maintain proper nutrition and hydration on-the-go. Featuring a patented mixing system—with a 316 surgical-grade stainless steel BlenderBall wire whisk (found only in BlenderBottle brand shaker cups) that moves freely inside the bottle to smooth out drink mixes and meal ingredients—it’s ideal for protein shakes, smoothies, fiber drinks, and meal replacements. It’s also a handy kitchen tool for mixing pancake batter, scrambled eggs, and salad dressings. The wide mouth makes it easy to add scoops of powdered mixes, meal ingredients, and liquids, and embossed markings show both ounces and milliliters for easy measuring anywhere (note that markings on the 28-ounce capacity shaker cup only go up to 20 ounces). Bottle contents and liquids are securely contained thanks to a tightly threaded screw-on lid that creates a leakproof seal, and a flip cap that snaps securely shut for shaking and transportation. The convenient loop top makes it easy to carry the bottle and offers a place to attach car keys while at the gym. The BlenderBottle Classic 28-Ounce Shaker Bottle can also be used as a water bottle; the ball can be left inside, as it will never rust, chip, or peel. BPA and phthalate-free, dishwasher safe..",
-  price: "8.50",
+  price: "8.99",
   inventory: "70",
   rating: "5",
 )

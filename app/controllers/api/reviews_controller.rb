@@ -7,7 +7,7 @@ class Api::ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         if @review.save && logged_in?
-            # render 'api/products/show'
+            render :show
         else
             render json: ['Invalid review'], status: 422
         end
@@ -17,12 +17,21 @@ class Api::ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         if @review.reviewer_id == current_user.id
             @review.destroy
-            # render 'api/products/show'
+            render 'api/products/show'
         else
-            render json: ['Could not remove review, please try again'],
+            render json: ['Could not remove review, please try again'], status: 422
         end
     end
 
+    def update
+        @review = Review.find(params[:id])
+        if @review.reviewer_id == current_user.id
+            @review.update
+            render 'api/products/show'
+        else
+            render json: ['Could not update review, please try again'], status: 422
+        end
+    end
 
     private
     def review_params
