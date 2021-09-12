@@ -1,5 +1,6 @@
 import React from "react";
-
+import MenuIcon from "@material-ui/icons/Menu";
+import { Menu } from "@material-ui/core";
 class NavBarCategories extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,10 @@ class NavBarCategories extends React.Component {
     return (
       <div>
         <ul id="categories-list">
-          <li className="hovered-category">All</li>
+          <li className="hovered-category">
+            <MenuIcon />
+            All
+          </li>
           <li className="hovered-category">Buy Again</li>
           <li className="hovered-category">Weights</li>
           <li className="hovered-category">

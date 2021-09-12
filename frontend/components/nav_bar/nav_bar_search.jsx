@@ -31,7 +31,7 @@ class NavBarSearch extends React.Component {
 
         <div id="nav-bar-search-group">
           <select className="nav-bar-search-select">
-            <option value="0"> All: </option>
+            <option value="0">All: </option>
           </select>
           <input
             type="text"

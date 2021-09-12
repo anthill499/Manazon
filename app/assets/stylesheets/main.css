@@ -270,7 +270,7 @@ form {
 }
 
 .hovered-category:hover {
-  padding: 5px;
+  /* padding: 5px; */
   padding-left: 0px;
   padding-right: 0px;
   border: 1px solid white;
