@@ -1,5 +1,7 @@
 import React from "react";
 import LockIcon from "@material-ui/icons/Lock";
+import ReviewIndexContainer from "../reviews/review_index_container";
+import CreateViewFormContainer from "../reviews/create_review_form_container";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -7,7 +9,8 @@ class ProductProfile extends React.Component {
 
   // this.props.match.params.productId
   componentDidMount() {
-    this.props.fetchProducts();
+    this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchReviews(this.props.match.params.productId);
   }
 
   render() {
@@ -105,6 +108,8 @@ class ProductProfile extends React.Component {
             </div>
           </div>
         </div>
+        <ReviewIndexContainer product={this.props.product} />
+        <CreateViewFormContainer product={this.props.product} />
       </div>
     );
   }

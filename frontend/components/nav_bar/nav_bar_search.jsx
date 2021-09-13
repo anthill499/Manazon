@@ -45,7 +45,6 @@ class NavBarSearch extends React.Component {
             <img src={window.mag} id="mag" />
           </button>
         </div>
-
         <div id="modal-trigger" onClick={(e) => this.handleFocusOrBlur(e)}>
           <div id="account-lists">
             <div>

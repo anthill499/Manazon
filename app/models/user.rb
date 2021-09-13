@@ -20,6 +20,11 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :full_name, length: { minimum: 3 }
 
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :reviewer_id,
+        class_name: :Review
+
     attr_reader :password
 
     def self.find_by_credentials(em, pw)

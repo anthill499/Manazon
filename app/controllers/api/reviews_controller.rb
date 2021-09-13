@@ -1,38 +1,44 @@
 class Api::ReviewsController < ApplicationController
     def index
-        @reviews = Review.all
+        @product = Product.find(params[:product_id])
+        @reviews = @product.reviews
         render :index
     end
-    
+
+    def show
+        @review = Review.find(params[:id])
+        render :show
+    end
+
     def create
+        @product = Product.find(params[:product_id])
         @review = Review.new(review_params)
-        if @review.save && logged_in?
+        if @review.save
             render :show
         else
-            render json: ['Invalid review'], status: 422
+            render json: ["Could not create review"], status: 422 
         end
     end
 
-    def destroy
+    def destroy 
+        @product = Product.find(params[:product_id])
         @review = Review.find(params[:id])
-        if @review.reviewer_id == current_user.id
-            @review.destroy
-            render 'api/products/show'
+        if @review && @review.destroy
+            render :index
         else
-            render json: ['Could not remove review, please try again'], status: 422
+            render json: ["Could not destroy review"], status: 422 
         end
     end
 
     def update
+        @product = Product.find(params[:product_id])
         @review = Review.find(params[:id])
-        if @review.reviewer_id == current_user.id
-            @review.update
-            render 'api/products/show'
+        if @review.update(review_params)
+            render :show
         else
-            render json: ['Could not update review, please try again'], status: 422
+            render json: ["Could not update review"], status: 422
         end
     end
-
     private
     def review_params
         params.require(:review).permit(:title, :body, :rating, :reviewer_id, :product_id)

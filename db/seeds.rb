@@ -1,6 +1,7 @@
 # require 'rest-client'
 require 'open-uri'
 
+Review.destroy_all
 User.destroy_all
 Product.destroy_all
 
@@ -16,17 +17,6 @@ richard = User.create!(
   username: "rzleu123",
   full_name: "Richard Leung")
 
-# rm = RestClient.get "https://amazon-products1.p.rapidapi.com/search?country=US&query=Macbook%2BPro&page=1&rapidapi-key=#{ENV['API_KEY']}"
-# rm_array = JSON.parse(rm)["results"]
-# rm_array.each do |product| 
-#   Product.create!(
-#     title: product["title"],
-#     description: "this works",
-#     price: product["prices"]["current_price"],
-#     inventory: product["reviews"]["total_reviews"],
-#     rating: product["reviews"]["stars"])
-# end
-
 product1 = Product.create!(
   title: "PAC Barbell 150-Pound Dumbbell Set with Rack, Multiple Options",
   description: "SET INCLUDES – A pair of 5-pound, 10-pound, 15-pound, 20-pound, and 25-pound rubber hex dumbbells with an A-frame dumbbell rack to store the weights. This set ships in multiple boxes.SPACE-SAVING DESIGN – The A-frame design of this rack maximizes floor space by storing dumbbells in an “A” shape, or vertical fashion. Easily access and store dumbbells. Rubber inserts prevent dumbbells and rack from scratchesDURABLE & RELIABLE – Rack is made with steel & finished with durable black powder coat. Heads are made from ASTM A48 Class 20 grey iron and joined together by a 1018 cold rolled solid steel handle (sizes 15-120lb) with an extreme durable rubber coating.VERSATILE – Dumbbells offer the ability to target specific muscle groups or perform a full body workout. Perfect for isolations, functional and HIIT workouts, and strength training routines.FEATURES – The original hex shaped heads prevent rolling. The medium depth knurling on the handle provides essential grip and security during use. Rubber coating is a durable and effective finish",
@@ -34,6 +24,7 @@ product1 = Product.create!(
   inventory: "50",
   rating: "5",
 )
+
 product1.photo.attach(io: URI.open("https://manazon-dev.s3.amazonaws.com/gymrack.png"), filename: "gymrack.png")
 
 product2 = Product.create!(
@@ -126,3 +117,41 @@ product12 = Product.create!(
   rating: "5",
 )
 product12.photo.attach(io: URI.open("https://manazon-dev.s3.amazonaws.com/shakerbottle1.png"), filename: "shakerbottle1.png")
+
+review1 = Review.create!(title: "5 out of 5", body: "Best product I have ever used, I would recommend this to anyone", rating: 5, reviewer_id: richard.id, product_id: product3.id)
+review2 = Review.create!(title: "Awesome product", body: "I love the evenly distributed weights", rating: 5, reviewer_id: richard.id, product_id: product1.id)
+review3 = Review.create!(title: "Awesome product", 
+  body: "The squat rack is better than any of the gyms I have been to! ", 
+  rating: 5, 
+  reviewer_id: richard.id, 
+  product_id: product2.id
+)
+
+review4 = Review.create!(title: "I love this squat rack so much haha", 
+  body: " Ideal for personal training and even a home gym, this bench contributes to a variety of workouts such as bench press and squats, push-ups, dumbbell bench and more，Makes you feel like working out in a gym", 
+  rating: 4, 
+  reviewer_id: demoUser.id, 
+  product_id: product2.id
+)
+
+review5 = Review.create!(title: "So many different weight options, i am in love!", 
+  body: "I ordered mine from Manazon in August of 2013 and the set I got were manufactured with metal clips, so they are a revised version of what some people have negatively reviewed on here (which I believe were ones manufactured pre-2010). I looked at my box, which I still have and at the weights themselves and do not see a manufacture date, but I did talk with Bowflex before I ordered mine and they told me that Manazon IS an approved distributor and they reassured me that they are not selling knockoffs, mfg defects or old stuff like you might think. Just make sure if you buy them you check to see that it says Ships from and sold by Manazon.com When I bought them, they were only $249.99, so the price does vary from time to time. Hope that helps!", 
+  rating: 3, 
+  reviewer_id: demoUser.id, 
+  product_id: product3.id
+)
+
+review6 = Review.create!(title: "Wow, very impressed!", 
+  body: "Antes de decidirme a adquirir el sistema Bowflex, estuve evaluando comprar mancuernas hexagonales para incorporar varios pesos a mi kit casero de ejercicio", 
+  rating: 5, 
+  reviewer_id: richard.id, 
+  product_id: product3.id
+)
+
+review7 = Review.create!(title: "Everything i look for in adjustable dumbbells", 
+  body: "I read a lot of reviews for adjustable dumbells before deciding to get the pair of them. I had them in my cart for a while and when I saw that the price went down from $400 to $299 including delivery, I immediately bought them. I am just building up my home gym and this is a definite space saver with a small footprint.", 
+  rating: 5, 
+  reviewer_id: demoUser.id, 
+  product_id: product3.id
+)
+

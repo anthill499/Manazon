@@ -27,3 +27,10 @@ export const logout = () => {
     url: `/api/session/`,
   });
 };
+
+export const findUser = (userId) => {
+  return $.ajax({
+    method: "get",
+    url: `/api/users/${userId}`,
+  });
+};
