@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProducts: () => dispatch(fetchProducts()),
-  fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
 export default withRouter(

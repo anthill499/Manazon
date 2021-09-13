@@ -1,16 +1,17 @@
 import React from "react";
-
-const ProductIndexItem = ({ product }) => {
-  return (
-    <div className="product__container">
-      {/* {console.log(product.photoUrl)} */}
-      <img src={product.photoUrl} alt="product-image" />
-      <div>{product.title}</div>
-      <div>{product.description}</div>
-      <div>{product.price}</div>
-      <div>{product.rating}</div>
-    </div>
-  );
-};
+import { Link } from "react-router-dom";
+class ProductIndexItem extends React.Component {
+  render() {
+    const { product } = this.props;
+    return (
+      <div>
+        <Link to={`/products/${product.id}`}>
+          <img src={product.photoUrl} className="dumbbells" />
+        </Link>
+        <p>${product.price}</p>
+      </div>
+    );
+  }
+}
 
 export default ProductIndexItem;

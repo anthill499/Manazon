@@ -6,17 +6,17 @@ class ReviewIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchReviews(this.props.product.id);
-  }
-
   render() {
     if (!this.props.reviews) return null;
-    console.log(this.props.reviews);
     const mappedReviews = this.props.reviews.map((review, idx) => {
       return <ReviewIndexItem key={idx} review={review} />;
     });
-    return <div>{mappedReviews}</div>;
+    return (
+      <div className="reviews-container-wrapper">
+        <h2 className="customer-review-title">Customer Reviews</h2>
+        <div>{mappedReviews}</div>
+      </div>
+    );
   }
 }
 

@@ -10,9 +10,9 @@ class NavBarCategories extends React.Component {
     return (
       <div>
         <ul id="categories-list">
-          <li className="hovered-category">
+          <li className="hovered-category" id="hamburger">
             <MenuIcon />
-            All
+            <div>All</div>
           </li>
           <li className="hovered-category">Buy Again</li>
           <li className="hovered-category">Weights</li>

@@ -15,6 +15,7 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state, this.props.product.id);
+    // );
   }
 
   handleChange(property) {

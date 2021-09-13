@@ -19,9 +19,21 @@ footer {
   font-family: "Ember";
 }
 
+img {
+  cursor: pointer;
+}
+
 #select-address {
   display: flex;
   margin: 0px;
+}
+
+#hamburger {
+  display: flex;
+  align-content: center;
+  div {
+    margin-top: 4px;
+  }
 }
 
 .session-input {
@@ -372,8 +384,8 @@ form {
 }
 
 .dumbbells {
-  max-width: 10vw;
-  max-height: 30vh;
+  width: 8vw;
+  height: 15vh;
 }
 
 .four-pics-group {
@@ -623,6 +635,13 @@ a:visited {
   background-color: #ffd811;
 }
 
+.add-to-cart-button:hover {
+  background-color: #cfb11c;
+}
+
+.buy-now-button:hover {
+  background-color: #c08a42;
+}
 .manazons-choice {
   background-color: #232f3e;
   padding: 5px;
@@ -647,6 +666,40 @@ a:visited {
   border-left: none;
 }
 
-#choice {
+#choice,
+.rating-body-wrapper,
+.review-user-details {
   display: flex;
+}
+
+.review-user-details div {
+  font-family: "Light";
+  margin-top: 15px;
+}
+
+.review-date {
+  color: rgb(86, 89, 89);
+}
+
+.show-stars {
+  color: #ffa41b;
+  text-shadow: #e1802d;
+}
+
+.reviews-container-wrapper {
+  padding-left: 30px;
+  margin-top: 30px;
+}
+
+.customer-review-title {
+  font-size: 25px;
+  color: #e1802d;
+}
+
+.whole-review-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

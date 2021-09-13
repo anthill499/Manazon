@@ -2,6 +2,8 @@ import React from "react";
 import LockIcon from "@material-ui/icons/Lock";
 import ReviewIndexContainer from "../reviews/review_index_container";
 import CreateViewFormContainer from "../reviews/create_review_form_container";
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -9,14 +11,22 @@ class ProductProfile extends React.Component {
 
   // this.props.match.params.productId
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchProducts();
+    // this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchReviews(this.props.match.params.productId);
   }
 
   render() {
     if (!this.props.product) return null;
-    // debugger;
     const { title, price, photoUrl, description, rating } = this.props.product;
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(<StarIcon key={i} className="show-stars" />);
+      } else {
+        stars.push(<StarBorderIcon key={i} className="show-stars" />);
+      }
+    }
     return (
       <div>
         <img src={window.ad} id="amazon-ad" />
@@ -25,7 +35,7 @@ class ProductProfile extends React.Component {
           <div className="product-description-box">
             <div className="product-title">{title}</div>
             <div id="ratings-wrapper">
-              <div className="actual-stars">⭐⭐⭐⭐⭐</div>
+              <div className="actual-stars">{stars}</div>
               <div className="pay-later-wrapper">430 ratings</div>
               <div> | </div>
               <div className="pay-later-wrapper">20 answered questions</div>
@@ -89,7 +99,7 @@ class ProductProfile extends React.Component {
             <div className="inventory-level">In Stock.</div>
             <div className="product-checkout-buttons">
               <button className="add-to-cart-button">Add to cart</button>
-              <button>Buy now</button>
+              <button className="buy-now-button">Buy now</button>
             </div>
             <div className="secure-transaction-wrapper">
               <LockIcon className="lock-icon" />
@@ -109,7 +119,9 @@ class ProductProfile extends React.Component {
           </div>
         </div>
         <ReviewIndexContainer product={this.props.product} />
-        <CreateViewFormContainer product={this.props.product} />
+        {this.props.loggedIn && (
+          <CreateViewFormContainer product={this.props.product} />
+        )}
       </div>
     );
   }
