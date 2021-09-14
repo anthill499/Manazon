@@ -693,13 +693,63 @@ a:visited {
 
 .customer-review-title {
   font-size: 25px;
-  color: #e1802d;
+  // color: #e1802d;
+  margin-bottom: 20px;
 }
 
-.whole-review-wrapper {
+#customer-reviews-title {
+  color: #e1802d;
+  margin-bottom: 20px;
+  font-size: 25px;
+  margin-top: 30px;
+  padding-right: 10px;
+}
+
+.whole-review-wrapper,
+.review-date-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.verified-purchase {
+  color: #c45500;
+}
+
+.product-show-reviews {
+  border: 1px solid black;
+  padding: 20px;
+  padding-right: 100px;
+  margin-right: 50px;
+}
+
+.product-show-reviews-wrapper {
+  display: flex;
+  padding: 15px;
+}
+
+.review-boxes div {
+  display: flex;
+  gap: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.review-boxes-orange {
+  border-radius: 4px;
+  box-shadow: inset -2px 0 0 -1px #f5961d, inset 0 0 0 1px #de7921;
+  background-color: #ffa41c;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.review-boxes-grey {
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #e3e6e6;
+  background-color: #f0f2f2;
+  height: 20px;
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

@@ -7,6 +7,8 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.yellowBar = this.yellowBar.bind(this);
+    this.greyBar = this.greyBar.bind(this);
   }
 
   // this.props.match.params.productId
@@ -14,6 +16,17 @@ class ProductProfile extends React.Component {
     this.props.fetchProducts();
     // this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchReviews(this.props.match.params.productId);
+  }
+
+  yellowBar(num) {
+    const { reviews } = this.props;
+    const newArray = reviews.filter((review) => review.rating === num);
+    const result = Math.floor((newArray.length / reviews.length) * 100);
+    return result;
+  }
+
+  greyBar(num) {
+    return 100 - this.yellowBar(num);
   }
 
   render() {
@@ -27,6 +40,7 @@ class ProductProfile extends React.Component {
         stars.push(<StarBorderIcon key={i} className="show-stars" />);
       }
     }
+
     return (
       <div>
         <img src={window.ad} id="amazon-ad" />
@@ -36,7 +50,9 @@ class ProductProfile extends React.Component {
             <div className="product-title">{title}</div>
             <div id="ratings-wrapper">
               <div className="actual-stars">{stars}</div>
-              <div className="pay-later-wrapper">430 ratings</div>
+              <div className="pay-later-wrapper">
+                {this.props.reviews.length} ratings
+              </div>
               <div> | </div>
               <div className="pay-later-wrapper">20 answered questions</div>
             </div>
@@ -118,10 +134,81 @@ class ProductProfile extends React.Component {
             </div>
           </div>
         </div>
-        <ReviewIndexContainer product={this.props.product} />
-        {this.props.loggedIn && (
-          <CreateViewFormContainer product={this.props.product} />
-        )}
+        <div className="product-show-reviews-wrapper">
+          <div className="product-show-reviews">
+            <div id="customer-reviews-title">Customers Reviews</div>
+            <div id="stars-in-reviews">
+              <div>{stars}</div>
+              <div>{rating} out of 5</div>
+              <div className="review-boxes">
+                <div>
+                  <div
+                    className="review-boxes-orange five-star-box"
+                    style={{ width: `${this.yellowBar(5.0)}%` }}>
+                    <br />
+                  </div>
+                  <div
+                    className="review-boxes-grey"
+                    style={{ width: `${this.greyBar(5.0)}%` }}>
+                    <br />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className="review-boxes-orange four-star-box"
+                    style={{ width: `${this.yellowBar(4.0)}%` }}>
+                    <br />
+                  </div>
+                  <div
+                    className="review-boxes-grey"
+                    style={{ width: `${this.greyBar(4.0)}%` }}>
+                    <br />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className="review-boxes-orange three-star-box"
+                    style={{ width: `${this.yellowBar(3.0)}%` }}>
+                    <br />
+                  </div>
+                  <div
+                    className="review-boxes-grey"
+                    style={{ width: `${this.greyBar(3.0)}%` }}>
+                    <br />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className="review-boxes-orange two-star-box"
+                    style={{ width: `${this.yellowBar(2.0)}%` }}>
+                    <br />
+                  </div>
+                  <div
+                    className="review-boxes-grey"
+                    style={{ width: `${this.greyBar(2.0)}%` }}>
+                    <br />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className="review-boxes-orange one-star-box"
+                    style={{ width: `${this.yellowBar(1.0)}%` }}>
+                    <br />
+                  </div>
+                  <div
+                    className="review-boxes-grey"
+                    style={{ width: `${this.greyBar(1.0)}%` }}>
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ReviewIndexContainer product={this.props.product} />
+          {this.props.loggedIn && (
+            <CreateViewFormContainer product={this.props.product} />
+          )}
+        </div>
       </div>
     );
   }

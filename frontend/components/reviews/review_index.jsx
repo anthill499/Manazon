@@ -8,12 +8,22 @@ class ReviewIndex extends React.Component {
 
   render() {
     if (!this.props.reviews) return null;
-    const mappedReviews = this.props.reviews.map((review, idx) => {
-      return <ReviewIndexItem key={idx} review={review} />;
+    const mappedReviews = this.props.reviews.reverse().map((review, idx) => {
+      return (
+        <ReviewIndexItem
+          key={idx}
+          review={review}
+          deleteReview={this.props.deleteReview}
+          productId={this.props.product.id}
+          currentUserId={this.props.currentUserId}
+        />
+      );
     });
     return (
       <div className="reviews-container-wrapper">
-        <h2 className="customer-review-title">Customer Reviews</h2>
+        <h2 className="customer-review-title">
+          Top reviews from the United States
+        </h2>
         <div>{mappedReviews}</div>
       </div>
     );

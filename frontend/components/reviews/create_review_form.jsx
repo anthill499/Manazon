@@ -1,5 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router";
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 class CreateReviewForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,6 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state, this.props.product.id);
-    // );
   }
 
   handleChange(property) {
@@ -23,6 +24,34 @@ class CreateReviewForm extends React.Component {
   }
 
   render() {
+    // https://w3collective.com/react-star-rating-component/
+    // https://reactjs.org/docs/hooks-state.html
+    const starRatings = (
+      <div>
+        {[1, 2, 3, 4, 5].map((num, i) => {
+          const actualNum = i + 1;
+          return (
+            <label>
+              <input
+                type="radio"
+                name="rating"
+                className="star-rating-radio-input"
+                value={actualNum}
+                onClick={() => this.setState({ rating: actualNum })}
+              />
+              <StarIcon
+                className="star"
+                style={{
+                  color: actualNum <= this.state.rating ? "black" : "grey",
+                }}
+                fontSize="small"
+              />
+            </label>
+          );
+        })}
+      </div>
+    );
+
     return (
       <div className="review-form">
         <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -32,12 +61,7 @@ class CreateReviewForm extends React.Component {
             value={this.state.title}
             onChange={this.handleChange("title")}
           />
-          <label>Rating</label>
-          <input
-            type="number"
-            value={this.state.rating}
-            onChange={this.handleChange("rating")}
-          />
+          <div>{starRatings}</div>
           <label>Review</label>
           <textarea
             cols="30"

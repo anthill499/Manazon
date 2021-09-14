@@ -149,3 +149,7 @@ hr {
   margin-top: 0;
   margin-bottom: 14px;
 }
+
+.star-rating-radio-input {
+  display: none;
+}

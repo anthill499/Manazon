@@ -6,6 +6,7 @@ import { fetchReviews } from "../../actions/review_actions";
 const mapStateToProps = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.productId],
   loggedIn: !!state.session.id,
+  reviews: Object.values(state.entities.reviews),
 });
 
 const mapDispatchToProps = (dispatch) => ({

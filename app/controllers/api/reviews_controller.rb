@@ -24,7 +24,7 @@ class Api::ReviewsController < ApplicationController
         @product = Product.find(params[:product_id])
         @review = Review.find(params[:id])
         if @review && @review.destroy
-            render :index
+            render :show
         else
             render json: ["Could not destroy review"], status: 422 
         end

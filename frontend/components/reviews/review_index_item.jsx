@@ -2,6 +2,11 @@ import React from "react";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 class ReviewIndexItem extends React.Component {
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteReview(this.props.review, this.props.productId);
+  }
+
   render() {
     const months = {
       "01": "January",
@@ -18,8 +23,8 @@ class ReviewIndexItem extends React.Component {
       12: "December",
     };
     const reviewStars = [];
-
     const { review } = this.props;
+
     if (!review) return null;
     for (let i = 0; i < 5; i++) {
       if (i < review.rating) {
@@ -35,6 +40,17 @@ class ReviewIndexItem extends React.Component {
       splitDate[0],
     ].join(" ");
 
+    const deleteButton =
+      review.reviewerId !== this.props.currentUserId ? null : (
+        <div className="delete-review">
+          <button
+            onClick={(e) => this.handleDelete(e)}
+            className="delete-review-button">
+            Delete
+          </button>
+        </div>
+      );
+
     return (
       <div className="whole-review-wrapper">
         <div className="review-user-details">
@@ -49,18 +65,22 @@ class ReviewIndexItem extends React.Component {
             <div>{review.title}</div>
           </div>
         </div>
-        <div>
+        <div className="review-date-wrapper">
           <div className="review-date">
             Reviewed in the United States at {date}
+          </div>
+          <div className="verified-purchase">
+            <div>Verified Purchase</div>
+            <div>{deleteButton}</div>
           </div>
         </div>
         <div className="review-body">
           <div>{review.body}</div>
         </div>
-
-        {/* <button>
-          <Link to={`/reviews/${review.id}/edit`}>Edit</Link>
-        </button> */}
+        <div className="review-date">
+          {Math.ceil(Math.random() * 1000)} people found this helpful
+        </div>
+        <hr />
       </div>
     );
   }
