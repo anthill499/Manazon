@@ -1,4 +1,3 @@
-import humps from "humps";
 // signup
 
 export const signup = (user) => {

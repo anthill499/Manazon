@@ -25,7 +25,10 @@ class User < ApplicationRecord
         foreign_key: :reviewer_id,
         class_name: :Review
 
-    
+    has_many :cart_items,
+        foreign_key: :shopper_id,
+        class_name: :CartItem
+        
     attr_reader :password
 
     def self.find_by_credentials(em, pw)

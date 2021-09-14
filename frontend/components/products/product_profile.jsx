@@ -7,15 +7,77 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cartQuantity: 1,
+    };
     this.yellowBar = this.yellowBar.bind(this);
     this.greyBar = this.greyBar.bind(this);
+    this.checkCartContent = this.checkCartContent.bind(this);
   }
 
   // this.props.match.params.productId
   componentDidMount() {
     this.props.fetchProducts();
-    // this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchReviews(this.props.match.params.productId);
+    this.props.fetchCartItems();
+  }
+
+  handleQuantityChange(e) {
+    this.setState({ cartQuantity: e.target.value });
+  }
+
+  checkCartContent() {
+    let variable = false;
+    this.props.allCarts.forEach((cartItem) => {
+      if (cartItem.productId === this.props.product.id) {
+        variable = true;
+      } else {
+        false;
+      }
+    });
+    return variable;
+  }
+
+  addToCart(e) {
+    const { product, currentUserId, allCarts } = this.props;
+    e.preventDefault();
+
+    const cartItem = {
+      productQuantity: this.state.cartQuantity,
+      productId: product.id,
+      shopperId: currentUserId,
+    };
+
+    let currentCartId;
+    // debugger;
+    allCarts.forEach((cartItem) => {
+      if (cartItem.productId === product.id) {
+        currentCartId = cartItem.id;
+        debugger;
+      }
+    });
+
+    const placeholder = allCarts.filter(
+      (cartItem) => cartItem.id === currentCartId
+    );
+
+    // debugger;
+    const currentQuantity = placeholder[0].productQuantity;
+    const updatedCartItem = {
+      productQuantity: this.state.cartQuantity + currentQuantity,
+      productId: product.id,
+      shopperId: currentUserId,
+      id: currentCartId,
+    };
+    if (this.checkCartContent()) {
+      this.props
+        .updateCartItem(updatedCartItem)
+        .then(() => this.props.history.push("/cart_items"));
+    } else {
+      this.props
+        .createCartItem(cartItem)
+        .then(() => this.props.history.push("/cart_items"));
+    }
   }
 
   yellowBar(num) {
@@ -113,9 +175,26 @@ class ProductProfile extends React.Component {
               <div className="price-label">FREE Returns</div>
             </div>
             <div className="inventory-level">In Stock.</div>
+            <div>
+              <label htmlFor="quantity">Qty:</label>
+              <select
+                id="quantity"
+                onChange={(e) => this.handleQuantityChange(e)}
+                value={this.state.cartQuantity}>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+              </select>
+            </div>
             <div className="product-checkout-buttons">
-              <button className="add-to-cart-button">Add to cart</button>
+              {/* ADD TO CART SECTION */}
+              <button
+                className="add-to-cart-button"
+                onClick={(e) => this.addToCart(e)}>
+                Add to cart
+              </button>
               <button className="buy-now-button">Buy now</button>
+              {/* ADD TO CART SECTION */}
             </div>
             <div className="secure-transaction-wrapper">
               <LockIcon className="lock-icon" />
@@ -202,12 +281,12 @@ class ProductProfile extends React.Component {
                   </div>
                 </div>
               </div>
+              {this.props.loggedIn && (
+                <CreateViewFormContainer product={this.props.product} />
+              )}
             </div>
           </div>
           <ReviewIndexContainer product={this.props.product} />
-          {this.props.loggedIn && (
-            <CreateViewFormContainer product={this.props.product} />
-          )}
         </div>
       </div>
     );
