@@ -96,7 +96,6 @@ class NavBarSearch extends React.Component {
         <div className="shopping-cart">
           <Link to="/cart_items">
             <div id="cart-item-count">{this.props.allCartItems.length}</div>
-            Cart
             <img src={window.cart} id="nav-cart" />
           </Link>
         </div>
