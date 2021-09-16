@@ -58,12 +58,8 @@ class ReviewIndexItem extends React.Component {
           <div>{review.username}</div>
         </div>
         <div className="rating-body-wrapper">
-          <div className="review-rating">
-            <div>{reviewStars}</div>
-          </div>
-          <div className="review-title">
-            <div>{review.title}</div>
-          </div>
+          <div className="review-rating">{reviewStars}</div>
+          <div className="review-title">{review.title}</div>
         </div>
         <div className="review-date-wrapper">
           <div className="review-date">
@@ -71,7 +67,7 @@ class ReviewIndexItem extends React.Component {
           </div>
           <div className="verified-purchase">
             <div>Verified Purchase</div>
-            <div>{deleteButton}</div>
+            <div className="delete-button">{deleteButton}</div>
           </div>
         </div>
         <div className="review-body">

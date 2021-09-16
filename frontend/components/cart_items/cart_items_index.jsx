@@ -35,9 +35,14 @@ class CartItemsIndex extends React.Component {
       );
     });
     return (
-      <div>
-        <div>{cartItemsMapped}</div>
-        <div>
+      <div className="cart-container">
+        <div className="cart-item-wrapper">
+          <div className="shopping-cart-label">
+            <div className="shopping-cart-literal">Shopping Cart</div>
+            <div className="cart-select-all-items">Select all items</div>
+          </div>
+          <hr />
+          <div>{cartItemsMapped}</div>
           <button
             className="checkout-button"
             onClick={(e) => this.handleCheckout(e)}>

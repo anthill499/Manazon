@@ -4,15 +4,18 @@ import ReviewIndexContainer from "../reviews/review_index_container";
 import CreateViewFormContainer from "../reviews/create_review_form_container";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
 class ProductProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cartQuantity: 1,
+      ratingsCalculalatedHidden: true,
     };
     this.yellowBar = this.yellowBar.bind(this);
     this.greyBar = this.greyBar.bind(this);
     this.checkCartContent = this.checkCartContent.bind(this);
+    this.checkStateForModal = this.checkStateForModal.bind(this);
   }
 
   // this.props.match.params.productId
@@ -49,7 +52,6 @@ class ProductProfile extends React.Component {
     };
 
     let currentCartId;
-    //
     allCarts.forEach((cartItem) => {
       if (cartItem.productId === product.id) {
         currentCartId = cartItem.id;
@@ -80,6 +82,17 @@ class ProductProfile extends React.Component {
     }
   }
 
+  handleRatingsModalClick(e) {
+    e.stopPropogation;
+    const currentModalState = this.state.ratingsCalculalatedHidden;
+    this.setState({
+      ratingsCalculalatedHidden: !currentModalState,
+    });
+  }
+
+  checkStateForModal() {
+    return this.state.ratingsCalculalatedHidden ? "90deg" : "270deg";
+  }
   yellowBar(num) {
     const { reviews } = this.props;
     const newArray = reviews.filter((review) => review.rating === num);
@@ -103,8 +116,17 @@ class ProductProfile extends React.Component {
       }
     }
 
-    return (
+    const howAreRatingsCalculated = this.state
+      .ratingsCalculalatedHidden ? null : (
       <div>
+        To calculate the overall star rating and percentage breakdown by star,
+        we don’t use a simple average. Instead, our system considers things like
+        how recent a review is and if the reviewer bought the item on Manazon.
+        It also analyzes reviews to verify trustworthiness.
+      </div>
+    );
+    return (
+      <div id="product-show-wrapper">
         <img src={window.ad} id="amazon-ad" />
         <div className="product-wrapper">
           <img src={photoUrl} alt="product-img" />
@@ -293,6 +315,19 @@ class ProductProfile extends React.Component {
                     <span className="star-label">{this.yellowBar(1.0)}%</span>
                   </div>
                 </div>
+              </div>
+
+              <div className="ratings-modal">
+                <ArrowBackIosSharpIcon
+                  className="ratings-modal-arrow"
+                  // style={{ transform: rotate(this.checkStateForModal()) }}
+                />
+                <div onClick={(e) => this.handleRatingsModalClick(e)}>
+                  How are ratings calculated?
+                </div>
+              </div>
+              <div className="rating-modal-dropdown">
+                {howAreRatingsCalculated}
               </div>
               {this.props.loggedIn && (
                 <CreateViewFormContainer product={this.props.product} />
