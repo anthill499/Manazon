@@ -29,7 +29,7 @@ export const updateCartItem = (cartItem) => {
   });
 };
 
-export const destroyCartItem = (cartItem) =>
+export const removeCartItem = (cartItem) =>
   $.ajax({
     method: "DELETE",
     url: `/api/cart_items/${cartItem.id}`,

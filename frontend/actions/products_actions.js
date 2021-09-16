@@ -19,6 +19,12 @@ export const fetchProducts = () => (dispatch) => {
   );
 };
 
+export const fetchSearchedProducts = (query) => (dispatch) => {
+  ProductApiUtil.fetchSearchedProducts(query).then((products) =>
+    dispatch(receiveProductIndex(products))
+  );
+};
+
 export const fetchProduct = (productId) => (dispatch) => {
   ProductApiUtil.fetchProduct(productId).then((product) =>
     dispatch(receiveProduct(product))

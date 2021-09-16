@@ -23,7 +23,7 @@ class ProductProfile extends React.Component {
   }
 
   handleQuantityChange(e) {
-    this.setState({ cartQuantity: e.target.value });
+    this.setState({ cartQuantity: e.currentTarget.value });
   }
 
   checkCartContent() {
@@ -43,17 +43,16 @@ class ProductProfile extends React.Component {
     e.preventDefault();
 
     const cartItem = {
-      productQuantity: this.state.cartQuantity,
+      productQuantity: parseFloat(this.state.cartQuantity),
       productId: product.id,
       shopperId: currentUserId,
     };
 
     let currentCartId;
-    // debugger;
+    //
     allCarts.forEach((cartItem) => {
       if (cartItem.productId === product.id) {
         currentCartId = cartItem.id;
-        debugger;
       }
     });
 
@@ -61,10 +60,11 @@ class ProductProfile extends React.Component {
       (cartItem) => cartItem.id === currentCartId
     );
 
-    // debugger;
-    const currentQuantity = placeholder[0].productQuantity;
+    const currentQuantity =
+      placeholder.length > 0 ? placeholder[0].productQuantity : 0;
     const updatedCartItem = {
-      productQuantity: this.state.cartQuantity + currentQuantity,
+      productQuantity:
+        parseFloat(this.state.cartQuantity) + parseFloat(currentQuantity),
       productId: product.id,
       shopperId: currentUserId,
       id: currentCartId,
@@ -175,15 +175,20 @@ class ProductProfile extends React.Component {
               <div className="price-label">FREE Returns</div>
             </div>
             <div className="inventory-level">In Stock.</div>
+            <div className="free-delivery">
+              FREE delivery: <span>Tomorrow</span>
+              <div>Order within 1 hr and 2 mins</div>
+            </div>
             <div>
-              <label htmlFor="quantity">Qty:</label>
               <select
-                id="quantity"
+                className="quantity-select"
                 onChange={(e) => this.handleQuantityChange(e)}
                 value={this.state.cartQuantity}>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
+                <option value={1} selected>
+                  Qty: 1
+                </option>
+                <option value={2}>Qty: 2</option>
+                <option value={3}>Qty: 3</option>
               </select>
             </div>
             <div className="product-checkout-buttons">
@@ -213,71 +218,79 @@ class ProductProfile extends React.Component {
             </div>
           </div>
         </div>
+        <hr className="product-review-divider" />
         <div className="product-show-reviews-wrapper">
           <div className="product-show-reviews">
             <div id="customer-reviews-title">Customers Reviews</div>
             <div id="stars-in-reviews">
-              <div>{stars}</div>
-              <div>{rating} out of 5</div>
-              <div className="review-boxes">
-                <div>
-                  <div
-                    className="review-boxes-orange five-star-box"
-                    style={{ width: `${this.yellowBar(5.0)}%` }}>
-                    <br />
+              <div id="stars-and-rating-flex">
+                <div>{stars}</div>
+                <span>{rating} out of 5</span>
+              </div>
+              <div id="global-rating">
+                {this.props.reviews.length} global ratings
+              </div>
+              <div>
+                <div className="review-boxes">
+                  <div className="star-label-wrapper">
+                    <span className="star-label">5 star</span>
+                    <div className="bars-wrappers">
+                      <div
+                        className="review-boxes-orange five-star-box"
+                        style={{ width: `${this.yellowBar(5.0)}%` }}></div>
+                      <div
+                        className="review-boxes-grey"
+                        style={{ width: `${this.greyBar(5.0)}%` }}></div>
+                    </div>
+                    <span className="star-label">{this.yellowBar(5.0)}%</span>
                   </div>
-                  <div
-                    className="review-boxes-grey"
-                    style={{ width: `${this.greyBar(5.0)}%` }}>
-                    <br />
+                  <div className="star-label-wrapper">
+                    <span className="star-label">4 star</span>
+                    <div className="bars-wrappers">
+                      <div
+                        className="review-boxes-orange four-star-box"
+                        style={{ width: `${this.yellowBar(4.0)}%` }}></div>
+                      <div
+                        className="review-boxes-grey"
+                        style={{ width: `${this.greyBar(4.0)}%` }}></div>
+                    </div>
+                    <span className="star-label">{this.yellowBar(4.0)}%</span>
                   </div>
-                </div>
-                <div>
-                  <div
-                    className="review-boxes-orange four-star-box"
-                    style={{ width: `${this.yellowBar(4.0)}%` }}>
-                    <br />
+                  <div className="star-label-wrapper">
+                    <span className="star-label">3 star</span>
+                    <div className="bars-wrappers">
+                      <div
+                        className="review-boxes-orange three-star-box"
+                        style={{ width: `${this.yellowBar(3.0)}%` }}></div>
+                      <div
+                        className="review-boxes-grey"
+                        style={{ width: `${this.greyBar(3.0)}%` }}></div>
+                    </div>
+                    <span className="star-label">{this.yellowBar(3.0)}%</span>
                   </div>
-                  <div
-                    className="review-boxes-grey"
-                    style={{ width: `${this.greyBar(4.0)}%` }}>
-                    <br />
+                  <div className="star-label-wrapper">
+                    <span className="star-label">2 star</span>
+                    <div className="bars-wrappers">
+                      <div
+                        className="review-boxes-orange two-star-box"
+                        style={{ width: `${this.yellowBar(2.0)}%` }}></div>
+                      <div
+                        className="review-boxes-grey"
+                        style={{ width: `${this.greyBar(2.0)}%` }}></div>
+                    </div>
+                    <span className="star-label">{this.yellowBar(2.0)}%</span>
                   </div>
-                </div>
-                <div>
-                  <div
-                    className="review-boxes-orange three-star-box"
-                    style={{ width: `${this.yellowBar(3.0)}%` }}>
-                    <br />
-                  </div>
-                  <div
-                    className="review-boxes-grey"
-                    style={{ width: `${this.greyBar(3.0)}%` }}>
-                    <br />
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="review-boxes-orange two-star-box"
-                    style={{ width: `${this.yellowBar(2.0)}%` }}>
-                    <br />
-                  </div>
-                  <div
-                    className="review-boxes-grey"
-                    style={{ width: `${this.greyBar(2.0)}%` }}>
-                    <br />
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="review-boxes-orange one-star-box"
-                    style={{ width: `${this.yellowBar(1.0)}%` }}>
-                    <br />
-                  </div>
-                  <div
-                    className="review-boxes-grey"
-                    style={{ width: `${this.greyBar(1.0)}%` }}>
-                    <br />
+                  <div className="star-label-wrapper">
+                    <span className="star-label">1 star</span>
+                    <div className="bars-wrappers">
+                      <div
+                        className="review-boxes-orange one-star-box"
+                        style={{ width: `${this.yellowBar(1.0)}%` }}></div>
+                      <div
+                        className="review-boxes-grey"
+                        style={{ width: `${this.greyBar(1.0)}%` }}></div>
+                    </div>
+                    <span className="star-label">{this.yellowBar(1.0)}%</span>
                   </div>
                 </div>
               </div>

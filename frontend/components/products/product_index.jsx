@@ -13,7 +13,6 @@ class ProductIndex extends React.Component {
   render() {
     const { allProducts } = this.props;
     if (allProducts.length === 0 || !allProducts) return null;
-    console.log(allProducts);
     return (
       <div id="import-div">
         <div id="index-title">

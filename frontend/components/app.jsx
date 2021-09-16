@@ -9,6 +9,7 @@ import NavBarCategories from "./nav_bar/nav_bar_categories";
 import NavBar from "./nav_bar/nav_bar";
 import ProductProfileContainer from "./products/product_profile_container";
 import CartItemIndexContainer from "../components/cart_items/cart_items_container";
+import SearchIndex from "../components/search/search_index";
 const App = ({ store }) => {
   const { pathname } = useLocation();
   return (
@@ -31,6 +32,7 @@ const App = ({ store }) => {
         />
         <Route exact path="/cart_items" component={CartItemIndexContainer} />
         <Route exact path="/" component={ProductIndexContainer} />
+        <Route exact path="/search" component={SearchIndex} />
       </Switch>
 
       {/* Protected/ auth routes */}

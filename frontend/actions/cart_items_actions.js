@@ -39,6 +39,6 @@ export const updateCartItem = (cartItem) => (dispatch) =>
   );
 
 export const deleteCartItem = (cartItem) => (dispatch) =>
-  CartItemApiUtil.destroyCartItem(cartItem).then((cartItem) =>
+  CartItemApiUtil.removeCartItem(cartItem).then((cartItem) =>
     dispatch(removeCartItem(cartItem))
   );

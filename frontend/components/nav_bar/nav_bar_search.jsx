@@ -1,16 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBarModalContainer from "./nav_modal_container";
-
+import { Redirect } from "react-router-dom";
 class NavBarSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = Object.assign(this.props.formData, { hidden: false });
+    // this.state = Object.assign(this.props.formData, { hidden: false });
+    this.state = { query: "", hidden: false };
+  }
+
+  componentDidMount() {
+    this.props.fetchCartItems();
   }
 
   handleFocusOrBlur(e) {
     const newState = !this.state.hidden;
     this.setState({ hidden: newState });
+  }
+
+  // handleSearch() {
+  //   const searchResults = [];
+  //   const keywords = this.state.query.toLowerCase().split(" ");
+  //   keywords.forEach((word) => {
+  //     this.props.ProductIndex.forEach((product) => {
+  //       if (product.title.toLowerCase().indexOf(word) !== -1)
+  //         searchResults.push(product);
+  //     });
+  //   });
+  //   {
+  //     console.log(this.state);
+  //   }
+  //   this.setState({ searchArray: searchResults }, () =>
+  //     console.log(this.state)
+  //   );
+  //   // console.log(searchResults); // works, array shows up
+  // }
+
+  handleSearch(e) {
+    console.log(this.state.query);
+    this.props
+      .fetchSearchedProducts(this.state.query)
+      .then((res) => this.props.history.push("/search"));
   }
 
   render() {
@@ -34,6 +64,7 @@ class NavBarSearch extends React.Component {
             <option value="0">All: </option>
           </select>
           <input
+            name="query"
             type="text"
             value={this.state.query}
             onChange={(e) => this.setState({ query: e.target.value })}
@@ -41,7 +72,9 @@ class NavBarSearch extends React.Component {
             id="nav-bar-search-bar"
           />
           {/* add functionality, database requests go here */}
-          <button className="nav-bar-search-button">
+          <button
+            className="nav-bar-search-button"
+            onClick={(e) => this.handleSearch(e)}>
             <img src={window.mag} id="mag" />
           </button>
         </div>
@@ -60,10 +93,12 @@ class NavBarSearch extends React.Component {
           {"&"} Orders
         </div>
 
-        <div>
-          <div id="cart-item-count">0</div>
-          Cart
-          <img src={window.cart} id="nav-cart" />
+        <div className="shopping-cart">
+          <Link to="/cart_items">
+            <div id="cart-item-count">{this.props.allCartItems.length}</div>
+            Cart
+            <img src={window.cart} id="nav-cart" />
+          </Link>
         </div>
       </div>
     );

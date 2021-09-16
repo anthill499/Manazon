@@ -1,5 +1,5 @@
 // signup
-
+import humps from "humps";
 export const signup = (user) => {
   const humpedUser = humps.decamelizeKeys(user);
   return $.ajax({

@@ -9,7 +9,7 @@ class CartItemsIndex extends React.Component {
     this.props.fetchCartItems();
   }
 
-  Checkout(e) {
+  handleCheckout(e) {
     e.preventDefault();
     this.props.cartItems.forEach((item) => {
       this.props.deleteCartItem(item);
@@ -19,7 +19,20 @@ class CartItemsIndex extends React.Component {
   render() {
     if (!this.props.cartItems) return null;
     const cartItemsMapped = this.props.cartItems.map((cartItem, idx) => {
-      return <CartIndexItem key={cartItem.id} cartItem={cartItem} />;
+      console.log(cartItem);
+      return (
+        <CartIndexItem
+          key={cartItem.id}
+          cartItem={cartItem}
+          fetchCartItem={this.props.fetchCartItem}
+          updateCartItem={this.props.updateCartItem}
+          currentUserId={this.props.currentUser}
+          currentCartId={cartItem.id}
+          productId={cartItem.productId}
+          productQuantity={cartItem.productQuantity}
+          deleteCartItem={this.props.deleteCartItem}
+        />
+      );
     });
     return (
       <div>

@@ -5,6 +5,7 @@ import {
   fetchCartItems,
   createCartItem,
   deleteCartItem,
+  updateCartItem,
 } from "../../actions/cart_items_actions";
 
 const mSTP = (state) => ({
@@ -18,6 +19,7 @@ const mDTP = (dispatch) => ({
   fetchCartItem: (cartItem) => dispatch(fetchCartItem(cartItem)),
   createCartItem: (cartItem) => dispatch(createCartItem(cartItem)),
   deleteCartItem: (cartItem) => dispatch(deleteCartItem(cartItem)),
+  updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
 });
 
 export default connect(mSTP, mDTP)(CartItemsIndex);

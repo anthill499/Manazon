@@ -5,6 +5,14 @@ export const fetchProducts = () => {
   });
 };
 
+export const fetchSearchedProducts = (query) => {
+  return $.ajax({
+    url: "/api/search",
+    method: "get",
+    data: { query },
+  });
+};
+
 export const fetchProduct = (productId) => {
   return $.ajax({
     method: "GET",

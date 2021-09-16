@@ -5,10 +5,18 @@ class Api::ProductsController < ApplicationController
         @products = Product.all
         render :index
     end
-    
+
+    def search
+        # debugger
+        @products = Product.where(`title ILIKE ?`, "%" + params[:query] + "%" )
+        # debugger
+        render :index
+    end
+
     # Finding specific product
     def show
         @product = Product.find(params[:id])
         render :show
     end
+
 end
