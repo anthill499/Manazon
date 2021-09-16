@@ -100,6 +100,7 @@ video {
   /* font-family: "Helvetica Neue"; */
   font-family: "Ember";
   background-repeat: no-repeat;
+  transition: all 0.1s linear;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -117,7 +118,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  /* line-height: 1; */
 }
 ol,
 ul {

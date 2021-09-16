@@ -206,7 +206,7 @@ class ProductProfile extends React.Component {
                 className="quantity-select"
                 onChange={(e) => this.handleQuantityChange(e)}
                 value={this.state.cartQuantity}>
-                <option value={1} selected>
+                <option value={1} defaultValue>
                   Qty: 1
                 </option>
                 <option value={2}>Qty: 2</option>
