@@ -292,6 +292,12 @@ form {
   border: 0.5px black;
   align-items: center;
   cursor: pointer;
+  // box-sizing: border-box;
+}
+
+.nav-hover:hover {
+  border: 1px solid white;
+  padding: 5px;
   position: relative;
 }
 

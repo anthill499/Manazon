@@ -49,8 +49,8 @@ class NavBarSearch extends React.Component {
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
-        <div id="select-address">
-          <div>
+        <div id="select-address" className="nav-hover">
+          <div className="nav-hover">
             <img src={window.pin} id="nav-pin" />
           </div>
           <div>
@@ -78,7 +78,10 @@ class NavBarSearch extends React.Component {
             <img src={window.mag} id="mag" />
           </button>
         </div>
-        <div id="modal-trigger" onClick={(e) => this.handleFocusOrBlur(e)}>
+        <div
+          id="modal-trigger"
+          onClick={(e) => this.handleFocusOrBlur(e)}
+          className="nav-hover">
           <div id="account-lists">
             <div>
               <p className="nav-grey">Hello, {name}</p>
@@ -87,13 +90,13 @@ class NavBarSearch extends React.Component {
           </div>
           {!this.state.hidden ? null : <NavBarModalContainer />}
         </div>
-        <div>
+        <div className="nav-hover">
           <p className="nav-grey">Returns</p>
           {/* <br /> */}
           {"&"} Orders
         </div>
 
-        <div className="shopping-cart">
+        <div className={("shopping-cart", "nav-hover")}>
           <Link to="/cart_items">
             <div id="cart-item-count">{this.props.allCartItems.length}</div>
             <img src={window.cart} id="nav-cart" />
