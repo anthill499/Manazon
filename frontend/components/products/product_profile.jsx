@@ -221,14 +221,12 @@ class ProductProfile extends React.Component {
               </select>
             </div>
             <div className="product-checkout-buttons">
-              {/* ADD TO CART SECTION */}
               <button
                 className="add-to-cart-button"
                 onClick={(e) => this.addToCart(e)}>
                 Add to cart
               </button>
               <button className="buy-now-button">Buy now</button>
-              {/* ADD TO CART SECTION */}
             </div>
             <div className="secure-transaction-wrapper">
               <LockIcon className="lock-icon" />

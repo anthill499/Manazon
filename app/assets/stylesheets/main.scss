@@ -579,11 +579,11 @@ a:visited {
   background-color: white;
 }
 .product-checkout-box {
+  display: flex;
+  flex-direction: column;
   border: 0.1px solid #d5d9d9;
   padding: 7px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   gap: 20px;
   padding-bottom: 5px;
   max-width: 14vw;
@@ -688,7 +688,10 @@ a:visited {
   display: flex;
   gap: 5px;
 }
-
+.product-checkout-buttons {
+  display: flex;
+  flex-direction: column;
+}
 .product-checkout-buttons button {
   border-radius: 25px;
   border: none;

@@ -55,13 +55,15 @@ const App = ({ store }) => {
             </ul>
           </div>
           <div>
-            <h2>Make money with us</h2>
+            <h2>Some of my Favorite People</h2>
             <ul>
-              <li>Sell products on Manazon</li>
-              <li>Sell apps on Manazon</li>
-              <li>Become an Affiliate </li>
-              <li>Become a Delivery Driver </li>
-              <li>Start a package delivery business</li>
+              <li>Richard Leung</li>
+              <li>Cindy Jiang</li>
+              <li>Christopher Chung</li>
+              <li>Alex Lam</li>
+              <li>Winnie Ng</li>
+              <li>Daniel Mechenko</li>
+              <li>Shahdi Qurashi</li>
             </ul>
           </div>
 
@@ -73,6 +75,7 @@ const App = ({ store }) => {
               <li>Working Out</li>
               <li>App Academy Cohort Mates</li>
               <li>Hiking</li>
+              <li>Richard Leung</li>
             </ul>
           </div>
 
