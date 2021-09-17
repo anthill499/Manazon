@@ -11,7 +11,7 @@ Manazon is a global e-commerce website that sells gym equipment, clothes and oth
 
 Link attached [here](https://manazon.herokuapp.com/#/)
 
-# Product, Shooping Cart, and Reviews
+# Product, Shopping Cart, and Reviews
 
 * A user should be able to click on a product on the homepage and take the user to the specific product listing
 * A logged-in user should be able to add/remove an item to and from his/her shopping cart
