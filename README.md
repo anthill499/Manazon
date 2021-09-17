@@ -7,7 +7,7 @@ Manazon is a global e-commerce website that sells gym equipment, clothes and oth
 
 <img width="1440" alt="manazonss" src="https://user-images.githubusercontent.com/79227636/133827626-1b07bed8-642a-4f28-a100-e74cb0e8c970.png">
 
-![video](https://user-images.githubusercontent.com/79227636/133843818-ef35ddf2-2c97-4acc-a0d8-789f95a52861.mp4)
+[video](https://user-images.githubusercontent.com/79227636/133843818-ef35ddf2-2c97-4acc-a0d8-789f95a52861.mp4)
 
 # Live Site
 
