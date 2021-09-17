@@ -21,29 +21,49 @@ class CartItemsIndex extends React.Component {
     this.props.cartItems.forEach((item) => {
       subtotal += item.productQuantity * item.product.price;
     });
-    // console.log(subtotal);
     return subtotal;
   }
 
   render() {
-    if (!this.props.cartItems) return null;
-    const cartItemsMapped = this.props.cartItems.map((cartItem, idx) => {
-      return (
-        <CartIndexItem
-          key={cartItem.id}
-          cartItem={cartItem}
-          fetchCartItem={this.props.fetchCartItem}
-          updateCartItem={this.props.updateCartItem}
-          currentUserId={this.props.currentUser}
-          currentCartId={cartItem.id}
-          productId={cartItem.productId}
-          productQuantity={cartItem.productQuantity}
-          deleteCartItem={this.props.deleteCartItem}
-        />
-      );
-    });
+    // if (!this.props.cartItems) return null;
+    // const cartItemsMapped = this.props.cartItems.map((cartItem, idx) => {
+    //   return (
+    //     <CartIndexItem
+    //       key={cartItem.id}
+    //       cartItem={cartItem}
+    //       fetchCartItem={this.props.fetchCartItem}
+    //       updateCartItem={this.props.updateCartItem}
+    //       currentUserId={this.props.currentUser}
+    //       currentCartId={cartItem.id}
+    //       productId={cartItem.productId}
+    //       productQuantity={cartItem.productQuantity}
+    //       deleteCartItem={this.props.deleteCartItem}
+    //     />
+    //   );
+    // });
 
-    // console.log(this.props);
+    const cartItemsMapped =
+      this.props.cartItems.length === 0 ? (
+        <div className="shopping-cart-literal">Your Manazon Cart is empty</div>
+      ) : (
+        this.props.cartItems.map((cartItem, idx) => {
+          return (
+            <CartIndexItem
+              key={cartItem.id}
+              cartItem={cartItem}
+              fetchCartItem={this.props.fetchCartItem}
+              updateCartItem={this.props.updateCartItem}
+              currentUserId={this.props.currentUser}
+              currentCartId={cartItem.id}
+              productId={cartItem.productId}
+              productQuantity={cartItem.productQuantity}
+              deleteCartItem={this.props.deleteCartItem}
+              cartItemsLength={this.props.cartItems.length}
+            />
+          );
+        })
+      );
+
     return (
       <div>
         <div className="cart-container">

@@ -14,12 +14,22 @@ class NavBarModal extends React.Component {
   render() {
     const button1 = this.props.currentUser ? (
       <div className="auth-modal">
-        <button onClick={(e) => this.props.logout(e)}> Sign Out</button>
+        <button onClick={(e) => this.props.logout(e)} className="modal-signin">
+          {" "}
+          Sign Out
+        </button>
       </div>
     ) : (
       <div className="auth-modal">
-        <Link to="/login">Sign In</Link>
-        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">
+          <button>Log In</button>
+        </Link>
+        <div className="auth-modal-child">
+          New Customer?{" "}
+          <Link to="/signup" className="start-here">
+            <span>Start Here</span>
+          </Link>
+        </div>
       </div>
     );
 
@@ -27,17 +37,22 @@ class NavBarModal extends React.Component {
       <div id="modal-hider">
         <div id="pointer"></div>
         <div className="nav-bar-login">
-          <div className="modal-signin">{button1}</div>
+          <div>{button1}</div>
           <div id="modal-list">
             <div className="modal-content">
-              <h2>Your Account</h2>
-              <ul>
-                <li>Account</li>
-                <li>Orders</li>
-                <li>Recommendations</li>
-                <li>Browsing History</li>
-                <li>Watchlist</li>
-              </ul>
+              {this.props.currentUser && (
+                <div>
+                  <h2>Your Account</h2>
+                  <br />
+                  <ul>
+                    <li>Account</li>
+                    <li>Orders</li>
+                    <li>Recommendations</li>
+                    <li>Browsing History</li>
+                    <li>Watchlist</li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>

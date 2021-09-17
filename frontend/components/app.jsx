@@ -57,8 +57,8 @@ const App = ({ store }) => {
           <div>
             <h2>Make money with us</h2>
             <ul>
-              <li>Sell products on Amazon</li>
-              <li>Sell apps on Amazon</li>
+              <li>Sell products on Manazon</li>
+              <li>Sell apps on Manazon</li>
               <li>Become an Affiliate </li>
               <li>Become a Delivery Driver </li>
               <li>Start a package delivery business</li>

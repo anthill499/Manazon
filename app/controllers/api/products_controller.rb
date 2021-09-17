@@ -7,9 +7,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        # debugger
         @products = Product.where(`title ILIKE ?`, "%" + params[:query] + "%" )
-        # debugger
         render :index
     end
 

@@ -28,16 +28,12 @@ class NavBarSearch extends React.Component {
   //     });
   //   });
   //   {
-  //     console.log(this.state);
   //   }
   //   this.setState({ searchArray: searchResults }, () =>
-  //     console.log(this.state)
-  //   );
-  //   // console.log(searchResults); // works, array shows up
+  //   ); // works, array shows up
   // }
 
   handleSearch(e) {
-    console.log(this.state.query);
     this.props
       .fetchSearchedProducts(this.state.query)
       .then((res) => this.props.history.push("/search"));
@@ -80,7 +76,8 @@ class NavBarSearch extends React.Component {
         </div>
         <div
           id="modal-trigger"
-          onClick={(e) => this.handleFocusOrBlur(e)}
+          onMouseEnter={(e) => this.handleFocusOrBlur(e)}
+          onMouseLeave={(e) => this.handleFocusOrBlur(e)}
           className="nav-hover">
           <div id="account-lists">
             <div>

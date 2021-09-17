@@ -33,6 +33,7 @@ class ReviewIndexItem extends React.Component {
         reviewStars.push(<StarBorderIcon key={i} className="show-stars" />);
       }
     }
+
     const splitDate = review.createdAt.split("-");
     const date = [
       months[splitDate[1]],
@@ -67,16 +68,13 @@ class ReviewIndexItem extends React.Component {
           </div>
           <div className="verified-purchase">
             <div>Verified Purchase</div>
-            <div className="delete-button">{deleteButton}</div>
+            <div>{deleteButton}</div>
           </div>
         </div>
         <div className="review-body">
           <div>{review.body}</div>
+          <hr />
         </div>
-        <div className="review-date">
-          {Math.ceil(Math.random() * 1000)} people found this helpful
-        </div>
-        <hr />
       </div>
     );
   }

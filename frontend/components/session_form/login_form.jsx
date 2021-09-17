@@ -40,9 +40,11 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-form-wrapper">
         <div className="logo-div">
-          <img src={window.logo} className="inverted-logo" />
+          <Link to="/">
+            <img src={window.logo} className="inverted-logo" />
+          </Link>
         </div>
         <div className="form-container">
           <div className="session-form">

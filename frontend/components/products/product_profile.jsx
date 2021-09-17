@@ -1,7 +1,6 @@
 import React from "react";
 import LockIcon from "@material-ui/icons/Lock";
 import ReviewIndexContainer from "../reviews/review_index_container";
-import CreateViewFormContainer from "../reviews/create_review_form_container";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
@@ -44,7 +43,9 @@ class ProductProfile extends React.Component {
   addToCart(e) {
     const { product, currentUserId, allCarts } = this.props;
     e.preventDefault();
-
+    if (!currentUserId) {
+      this.props.history.push("/login");
+    }
     const cartItem = {
       productQuantity: parseFloat(this.state.cartQuantity),
       productId: product.id,
@@ -91,10 +92,14 @@ class ProductProfile extends React.Component {
   }
 
   checkStateForModal() {
-    return this.state.ratingsCalculalatedHidden ? "90deg" : "270deg";
+    return this.state.ratingsCalculalatedHidden
+      ? "rotate(90deg)"
+      : "rotate(270deg)";
   }
+
   yellowBar(num) {
     const { reviews } = this.props;
+    if (reviews.length === 0) return 0;
     const newArray = reviews.filter((review) => review.rating === num);
     const result = Math.floor((newArray.length / reviews.length) * 100);
     return result;
@@ -157,7 +162,7 @@ class ProductProfile extends React.Component {
                 <div className="actual-price">${price}</div>
                 <img src={window.primelogo} id="prime-logo" />
                 <div className="price-label-and">{"&"}</div>
-                <div className="price-label">FREE Returns</div>
+                <div className="price-label"> FREE Returns</div>
               </div>
               <div className="pay-later-wrapper">
                 Pay{" "}
@@ -191,10 +196,12 @@ class ProductProfile extends React.Component {
           </div>
           <div className="product-checkout-box">
             <span className="actual-price">${price}</span>
-            <img src={window.primelogo} id="prime-logo" />
-            <div id="free-returns">
-              <div className="price-label-and">{"&"}</div>
-              <div className="price-label">FREE Returns</div>
+            <div id="prime-logo-fr-wrap">
+              <img src={window.primelogo} id="prime-logo" />
+              <div id="free-returns">
+                <div className="price-label-and">{"&"}</div>
+                <div className="price-label"> FREE Returns</div>
+              </div>
             </div>
             <div className="inventory-level">In Stock.</div>
             <div className="free-delivery">
@@ -320,7 +327,7 @@ class ProductProfile extends React.Component {
               <div className="ratings-modal">
                 <ArrowBackIosSharpIcon
                   className="ratings-modal-arrow"
-                  // style={{ transform: rotate(this.checkStateForModal()) }}
+                  style={{ transform: this.checkStateForModal() }}
                 />
                 <div onClick={(e) => this.handleRatingsModalClick(e)}>
                   How are ratings calculated?
@@ -329,9 +336,6 @@ class ProductProfile extends React.Component {
               <div className="rating-modal-dropdown">
                 {howAreRatingsCalculated}
               </div>
-              {this.props.loggedIn && (
-                <CreateViewFormContainer product={this.props.product} />
-              )}
             </div>
           </div>
           <ReviewIndexContainer product={this.props.product} />

@@ -13,7 +13,6 @@ class CartIndexItem extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // this.props.updateCartItem(this.state);
-    // debugger;
     if (prevState.potentialQuantity !== this.state.potentialQuantity) {
       this.props.updateCartItem(this.state);
     }

@@ -35,7 +35,9 @@ class SignupForm extends React.Component {
     return (
       <div>
         <div className="logo-div">
-          <img src={window.logo} className="inverted-logo" />
+          <Link to="/">
+            <img src={window.logo} className="inverted-logo" />
+          </Link>
         </div>
         <div className="form-container">
           <div className="session-form">

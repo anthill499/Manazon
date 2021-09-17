@@ -24,12 +24,16 @@ class CreateReviewForm extends React.Component {
   }
 
   render() {
-    // https://w3collective.com/react-star-rating-component/
-    // https://reactjs.org/docs/hooks-state.html
     const starRatings = (
       <div>
         {[1, 2, 3, 4, 5].map((num, i) => {
           const actualNum = i + 1;
+          const showStar =
+            actualNum <= this.state.rating ? (
+              <StarIcon className="show-stars" />
+            ) : (
+              <StarBorderIcon className="show-stars" />
+            );
           return (
             <label>
               <input
@@ -39,13 +43,7 @@ class CreateReviewForm extends React.Component {
                 value={actualNum}
                 onClick={() => this.setState({ rating: actualNum })}
               />
-              <StarIcon
-                className="star"
-                style={{
-                  color: actualNum <= this.state.rating ? "black" : "grey",
-                }}
-                fontSize="small"
-              />
+              {showStar}
             </label>
           );
         })}
@@ -53,23 +51,24 @@ class CreateReviewForm extends React.Component {
     );
 
     return (
-      <div className="review-form">
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+      <div>
+        <form onSubmit={(e) => this.handleSubmit(e)} className="review-form">
           <label>Title</label>
           <input
             type="text"
             value={this.state.title}
             onChange={this.handleChange("title")}
           />
+          <label>Rating</label>
           <div>{starRatings}</div>
-          <label>Review</label>
+          <label>Description</label>
           <textarea
-            cols="30"
-            rows="10"
+            // cols="66"
+            // rows="10"
             value={this.state.body}
             onChange={this.handleChange("body")}
           />
-          <input type="submit" />
+          <button>Submit Review</button>
         </form>
       </div>
     );
