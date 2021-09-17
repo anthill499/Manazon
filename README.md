@@ -18,6 +18,10 @@ Link attached [here](https://manazon.herokuapp.com/#/)
 * Reviews for a specific product should appear under its product listing on the show page
 * A logged-in user should be able to change the quantity of items in his/her cart
 
+<img width="1440" alt="Screen Shot 2021-09-17 at 1 12 43 PM" src="https://user-images.githubusercontent.com/79227636/133828173-8fa471d5-4d62-4743-adcd-cf2e44e3f6fd.png">
+
+<img width="1440" alt="Screen Shot 2021-09-17 at 1 13 12 PM" src="https://user-images.githubusercontent.com/79227636/133828323-e966a0db-ac03-4875-8d9c-498ba7c272dd.png">
+
 # Technologies used
 
 * Ruby
