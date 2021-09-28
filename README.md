@@ -71,7 +71,7 @@ addToCart(e) {
 - Accounted for if the item is already in the cart or not using the appropriate the ajax request
 - Fixed it by passing the necessary props down to child components and consistently looking at thunk logger to see if any variables are undefined
 
-2. Potential frontend filtering for search feature
+2. ## Potential frontend filtering for search feature
 - will implement in the feature
 ```javascript
   handleSearch() {
