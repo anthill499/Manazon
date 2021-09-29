@@ -29,8 +29,7 @@ class NavBarSearch extends React.Component {
   //   });
   //   {
   //   }
-  //   this.setState({ searchArray: searchResults }, () =>
-  //   ); // works, array shows up
+  //   this.setState({ searchArray: searchResults });
   // }
 
   handleSearch(e) {

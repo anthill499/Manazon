@@ -25,23 +25,6 @@ class CartItemsIndex extends React.Component {
   }
 
   render() {
-    // if (!this.props.cartItems) return null;
-    // const cartItemsMapped = this.props.cartItems.map((cartItem, idx) => {
-    //   return (
-    //     <CartIndexItem
-    //       key={cartItem.id}
-    //       cartItem={cartItem}
-    //       fetchCartItem={this.props.fetchCartItem}
-    //       updateCartItem={this.props.updateCartItem}
-    //       currentUserId={this.props.currentUser}
-    //       currentCartId={cartItem.id}
-    //       productId={cartItem.productId}
-    //       productQuantity={cartItem.productQuantity}
-    //       deleteCartItem={this.props.deleteCartItem}
-    //     />
-    //   );
-    // });
-
     const cartItemsMapped =
       this.props.cartItems.length === 0 ? (
         <div className="shopping-cart-literal">Your Manazon Cart is empty</div>

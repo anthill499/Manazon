@@ -13,6 +13,14 @@
         <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
     </script>
    <% end %>
+   <meta property="og:title" content="Manazon" />
+     <meta property='og:image' content="<%= image_url('manazongithub.png') %>"/>
+     <meta property="og:description"
+       content="Manazon is a global e-commerce website that sells gym equipment, clothes and other fitness related items. Similar to its clone/counterpart, users should be able to log-in/log-out, see a list of items and then add items to a shopping cart"
+     />
+     <meta property="og:url"
+       content="https://manazon.herokuapp.com/"
+     />
     <script type="text/javascript">
         window.logo = "<%= image_url('invertlogo1.png') %>"
         window.bg = "<%= image_url('muscle.png') %>"
