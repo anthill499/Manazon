@@ -44,17 +44,6 @@ const App = ({ store }) => {
         </div>
         <div className="extra-links">
           <div>
-            <h2>Get to know Us</h2>
-            <ul>
-              <li>Careers</li>
-              <li>Blog</li>
-              <li>About Manazon</li>
-              <li>Press Center</li>
-              <li>Investor Relations</li>
-              <li>Manazon Devices</li>
-            </ul>
-          </div>
-          <div>
             <h2>Some of my Favorite People</h2>
             <ul>
               <li>Richard Leung</li>
@@ -92,10 +81,17 @@ const App = ({ store }) => {
         </div>
         <div className="extra-links-two">
           <ul>
-            <li>Conditions of Use</li>
-            <li>Privacy Notice</li>
-            <li>Interest-Based Ads©</li>
-            <li>2021, Manazon, Inc. or its affiliates</li>
+            <li>
+              <a href="https://github.com/anthill499">Github</a>
+            </li>
+            <li>
+              <a href="https://angel.co/u/anthony-huang-8">AngelList</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/anthonyhuang499/">
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
       </footer>

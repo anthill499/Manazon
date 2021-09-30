@@ -44,8 +44,8 @@ class NavBarSearch extends React.Component {
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
-        <div id="select-address" className="nav-hover">
-          <div className="nav-hover">
+        <div id="select-address">
+          <div>
             <img src={window.pin} id="nav-pin" />
           </div>
           <div>

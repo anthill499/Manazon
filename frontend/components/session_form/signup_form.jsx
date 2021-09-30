@@ -86,9 +86,9 @@ class SignupForm extends React.Component {
               <hr className="solid"></hr>
               <div id="already-have-account">
                 <div>Already have an account?</div>
-                <div>
+                <p className="link-blue">
                   <Link to="login">Log-In</Link>
-                </div>
+                </p>
               </div>
             </form>
             <br />

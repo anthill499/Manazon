@@ -35,7 +35,6 @@ class NavBarModal extends React.Component {
 
     return (
       <div id="modal-hider">
-        <div id="pointer"></div>
         <div className="nav-bar-login">
           <div>{button1}</div>
           <div id="modal-list">

@@ -10,6 +10,7 @@ export const fetchUser = (user) => ({
   type: RECEIVE_A_USER,
   user,
 });
+
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser,
