@@ -216,9 +216,9 @@ form {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  min-width: 800px;
+  min-width: 650px;
   height: 50px;
-  width: 50vw;
+
   padding-left: 10px;
 }
 
@@ -326,7 +326,7 @@ form {
 //   min-width: 248px;
 // }
 .nav-hover {
-  min-width: 66px;
+  min-width: 112.3px;
 }
 
 .nav-hover:hover {
@@ -413,9 +413,9 @@ form {
 }
 .product-showings-group {
   display: flex;
+  justify-content: space-evenly;
   position: relative;
   gap: 20px;
-  left: 2.5%;
   top: 60%;
   padding-top: 350px;
   margin-bottom: 40px;
@@ -423,15 +423,15 @@ form {
 
 .product-group {
   background-color: white;
-  height: 60vh;
-  width: 480px;
-  min-width: 480px;
+  width: 425px;
+  min-width: 425px;
   display: flex;
   z-index: 3;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   flex-direction: column;
   padding-left: 40px;
+  min-height: 450.391px;
 }
 
 .dumbbells {
@@ -571,15 +571,14 @@ a:visited {
   padding-left: 0px;
   display: flex;
   max-height: 700px;
-  margin-left: 80px;
+  // margin-left: 80px;
   width: 100%;
-  max-width: 600px;
-  // padding-bottom: 20px;
+  max-width: 550px;
 }
 
 .product-wrapper {
   display: flex;
-  gap: 5vw;
+  justify-content: space-evenly;
   margin-top: 50px;
 }
 #product-show-wrapper {
@@ -589,16 +588,17 @@ a:visited {
   display: flex;
   flex-direction: column;
   border: 0.1px solid #d5d9d9;
-  padding: 7px;
+  padding: 10px;
   border-radius: 5px;
   gap: 20px;
   padding-bottom: 5px;
-  max-width: 15vw;
+  width: 250px;
 }
 
 .product-description-box {
   display: flex;
   flex-direction: column;
+  min-width: 425px;
   max-width: 425px;
   gap: 20px;
 }

@@ -9,9 +9,6 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <Link to="/">
-          <img src={window.manazonLogo} id="amazon-logo" />
-        </Link>
         <NavBarSearchContainer />
       </div>
     );

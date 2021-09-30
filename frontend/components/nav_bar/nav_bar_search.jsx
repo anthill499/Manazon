@@ -44,6 +44,9 @@ class NavBarSearch extends React.Component {
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
+        <Link to="/">
+          <img src={window.manazonLogo} id="amazon-logo" />
+        </Link>
         <div id="select-address">
           <div>
             <img src={window.pin} id="nav-pin" />
@@ -86,9 +89,8 @@ class NavBarSearch extends React.Component {
           </div>
           {!this.state.hidden ? null : <NavBarModalContainer />}
         </div>
-        <div className="nav-hover">
+        <div>
           <p className="nav-grey">Returns</p>
-          {/* <br /> */}
           {"&"} Orders
         </div>
 
