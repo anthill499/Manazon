@@ -218,8 +218,8 @@ form {
   border-bottom-style: hidden;
   min-width: 650px;
   height: 50px;
-
   padding-left: 10px;
+  border-radius: 0px;
 }
 
 .nav-bar-search-button {
@@ -571,7 +571,7 @@ a:visited {
   padding-left: 0px;
   display: flex;
   max-height: 700px;
-  // margin-left: 80px;
+  margin-left: 5vw;
   width: 100%;
   max-width: 550px;
 }
@@ -599,7 +599,8 @@ a:visited {
   display: flex;
   flex-direction: column;
   min-width: 425px;
-  max-width: 425px;
+  // max-width: 425px;
+  width: 35vw;
   gap: 20px;
 }
 .inventory-level {
