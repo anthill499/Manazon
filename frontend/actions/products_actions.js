@@ -13,14 +13,9 @@ export const receiveProduct = (product) => ({
   product,
 });
 
-export const fetchProducts = () => (dispatch) => {
-  ProductApiUtil.fetchProducts().then((products) =>
-    dispatch(receiveProductIndex(products))
-  );
-};
-
-export const fetchSearchedProducts = (query) => (dispatch) => {
-  ProductApiUtil.fetchSearchedProducts(query).then((products) =>
+export const fetchProducts = (query) => (dispatch) => {
+  // debugger;
+  return ProductApiUtil.fetchProducts(query).then((products) =>
     dispatch(receiveProductIndex(products))
   );
 };

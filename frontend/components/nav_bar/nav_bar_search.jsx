@@ -18,6 +18,11 @@ class NavBarSearch extends React.Component {
     this.setState({ hidden: newState });
   }
 
+  handlePressEnter(e) {
+    if (e.key === "Enter") {
+      this.handleSearch(e);
+    }
+  }
   // handleSearch() {
   //   const searchResults = [];
   //   const keywords = this.state.query.toLowerCase().split(" ");
@@ -34,7 +39,7 @@ class NavBarSearch extends React.Component {
 
   handleSearch(e) {
     this.props
-      .fetchSearchedProducts(this.state.query)
+      .fetchProducts(this.state.query)
       .then((res) => this.props.history.push("/search"));
   }
 
@@ -44,9 +49,11 @@ class NavBarSearch extends React.Component {
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
-        <Link to="/">
-          <img src={window.manazonLogo} id="amazon-logo" />
-        </Link>
+        <div>
+          <Link to="/">
+            <img src={window.manazonLogo} id="amazon-logo" />
+          </Link>
+        </div>
         <div id="select-address">
           <div>
             <img src={window.pin} id="nav-pin" />
@@ -68,6 +75,7 @@ class NavBarSearch extends React.Component {
             onChange={(e) => this.setState({ query: e.target.value })}
             placeholder="Search Manazon.."
             id="nav-bar-search-bar"
+            onKeyUp={(e) => this.handlePressEnter(e)}
           />
           {/* add functionality, database requests go here */}
           <button

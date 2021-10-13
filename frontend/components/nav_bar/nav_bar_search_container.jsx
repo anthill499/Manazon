@@ -1,9 +1,8 @@
 import NavBarSearch from "./nav_bar_search";
 import { connect } from "react-redux";
 import { fetchCartItems } from "../../actions/cart_items_actions";
-import { fetchProducts } from "../../util/product_util";
 import { withRouter } from "react-router-dom";
-import { fetchSearchedProducts } from "../../actions/products_actions";
+import { fetchProducts } from "../../actions/products_actions";
 const mapStateToProps = (
   { session, entities: { users, cartItems, products } },
   ownProps
@@ -17,8 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   // querying function here
   logout: (userId) => dispatch(logout(userId)),
   fetchCartItems: () => dispatch(fetchCartItems()),
-  fetchProducts: () => dispatch(fetchProducts()),
-  fetchSearchedProducts: (query) => dispatch(fetchSearchedProducts(query)),
+  fetchProducts: (query) => dispatch(fetchProducts(query)),
 });
 
 export default withRouter(

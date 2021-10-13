@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 class ProductIndexItem extends React.Component {
   render() {
     const { product } = this.props;
+    if (!product) return null;
     return (
       <div>
         <Link to={`/products/${product.id}`}>

@@ -220,6 +220,7 @@ form {
   height: 50px;
   padding-left: 10px;
   border-radius: 0px;
+  // width: 60vw;
 }
 
 .nav-bar-search-button {
@@ -932,7 +933,8 @@ a:visited {
 }
 
 .ratings-modal div:hover,
-.delete-review-button:hover {
+.delete-review-button:hover,
+.search-product-title a:hover {
   color: #c7511f;
   cursor: pointer;
 }
@@ -1125,10 +1127,53 @@ a:visited {
   font-size: 25px;
   margin-left: auto;
 }
+
 .cart-subtotal-part-two {
   font-size: 20px;
   margin-left: auto;
 }
+
 .cart-subtotal span {
   font-weight: 900;
+}
+
+.search-product-img {
+  width: 250px;
+  height: 250px;
+  margin-right: 50px;
+}
+
+.search-container {
+  padding: 15px;
+}
+
+.search-flex-container {
+  display: flex;
+  padding: 25px;
+  border-bottom: 0.5px solid lightgrey;
+  border-top: 0.5px solid lightgrey;
+}
+
+.search-product-title {
+  font-size: 22px;
+}
+
+.search-product-price {
+  font-size: 20px;
+}
+
+.search-product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-wrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.search-counter {
+  font-size: 20px;
+  padding: 20px;
 }

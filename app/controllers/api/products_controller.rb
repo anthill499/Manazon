@@ -2,12 +2,7 @@ class Api::ProductsController < ApplicationController
     
     #front/end
     def index
-        @products = Product.all
-        render :index
-    end
-
-    def search
-        @products = Product.where(`title ILIKE ?`, "%" + params[:query] + "%" )
+        @products = query ? @products = Product.all.select { |product| product.title.downcase.include?(query.downcase)} : Product.all
         render :index
     end
 
@@ -15,6 +10,10 @@ class Api::ProductsController < ApplicationController
     def show
         @product = Product.find(params[:id])
         render :show
+    end
+
+    def query
+        params[:query]
     end
 
 end
