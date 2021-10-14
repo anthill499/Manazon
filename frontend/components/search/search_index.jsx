@@ -2,19 +2,17 @@ import React from "react";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import { Link } from "react-router-dom";
-import { fetchProducts } from "../../util/product_util";
 
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  showStars(ele) {
+  showStars(rating) {
     const reviewStars = [];
-    const { review } = ele;
-    if (!review) return null;
+    if (!rating) return null;
     for (let i = 0; i < 5; i++) {
-      if (i < review.rating) {
+      if (i < rating) {
         reviewStars.push(<StarIcon key={i} className="show-stars" />);
       } else {
         reviewStars.push(<StarBorderIcon key={i} className="show-stars" />);
@@ -32,25 +30,36 @@ class SearchIndex extends React.Component {
       products.map((ele, i) => {
         return (
           <div key={i} className="search-flex-container">
-            <div>
-              <Link
-                to={`/products/${ele.id}`}
-                target="_blank"
-                rel="noopener noreferrer">
-                <img src={ele.photoUrl} className="search-product-img" />
-              </Link>
-            </div>
-            <div className="search-product-details">
-              <div className="search-product-title">
+            <div className="search-pic-n-text">
+              <div>
                 <Link
                   to={`/products/${ele.id}`}
                   target="_blank"
                   rel="noopener noreferrer">
-                  {ele.title}
+                  <img src={ele.photoUrl} className="search-product-img" />
                 </Link>
               </div>
-              <div className="search-product-price">${ele.price}</div>
-              <div>{ele.rating}</div>
+              <div className="search-product-details">
+                <div className="search-product-title">
+                  <Link
+                    to={`/products/${ele.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {ele.title}
+                  </Link>
+                </div>
+                <div>{this.showStars(ele.rating)}</div>
+                <div className="search-product-price">${ele.price}</div>
+                <div className="search-prime-and-delivery">
+                  <div>
+                    <img src={window.primelogo} className="search-prime" />
+                  </div>
+                  <div>FREE One-Day</div>
+                </div>
+              </div>
+            </div>
+            <div className="search-button-container">
+              <button>Add to cart</button>
             </div>
           </div>
         );
