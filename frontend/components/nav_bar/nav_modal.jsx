@@ -22,7 +22,7 @@ class NavBarModal extends React.Component {
     ) : (
       <div className="auth-modal">
         <Link to="/login">
-          <button>Log In</button>
+          <button className="modal-signin">Log In</button>
         </Link>
         <div className="auth-modal-child">
           New Customer?{" "}
@@ -42,7 +42,6 @@ class NavBarModal extends React.Component {
               {this.props.currentUser && (
                 <div>
                   <h2>Your Account</h2>
-                  <br />
                   <ul>
                     <li>Account</li>
                     <li>Orders</li>
