@@ -42,6 +42,7 @@ class CartItemsIndex extends React.Component {
               productQuantity={cartItem.productQuantity}
               deleteCartItem={this.props.deleteCartItem}
               cartItemsLength={this.props.cartItems.length}
+              photoUrl={cartItem.photoUrl}
             />
           );
         })

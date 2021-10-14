@@ -11,22 +11,27 @@ class CartIndexItem extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // this.props.updateCartItem(this.state);
-    if (prevState.potentialQuantity !== this.state.potentialQuantity) {
-      this.props.updateCartItem(this.state);
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // this.props.updateCartItem(this.state);
+  //   if (prevState.potentialQuantity !== this.state.potentialQuantity) {
+  //     this.props.updateCartItem(this.state);
+  //   }
+  // }
 
   handleQuantityChange(e) {
-    // e.preventDefault();
-    this.setState({
-      potentialQuantity: parseInt(e.currentTarget.value),
-    });
+    e.preventDefault();
+    console.log(e.currentTarget.value);
+    this.props
+      .updateCartItem({
+        productQuantity: parseInt(e.currentTarget.value),
+        productId: this.props.productId,
+        shopperId: this.props.currentUserId,
+        id: this.props.currentCartId,
+      })
+      .then(() => location.reload());
   }
 
   handleDelete(e) {
-    // e.preventDefault();
     this.props.deleteCartItem(this.state);
   }
 
@@ -45,6 +50,7 @@ class CartIndexItem extends React.Component {
       product,
       updateCartItem,
       currentUserId,
+      photoUrl,
     } = this.props.cartItem;
     return (
       <div>
@@ -52,7 +58,7 @@ class CartIndexItem extends React.Component {
           <div>
             <div className="each-cart-item">
               <img
-                src={this.props.cartItem.photoUrl}
+                src={photoUrl}
                 alt="no cart item photo here"
                 className="cart-product-img"
               />

@@ -32,7 +32,7 @@ const App = ({ store }) => {
         />
         <Route exact path="/cart_items" component={CartItemIndexContainer} />
         <Route exact path="/" component={ProductIndexContainer} />
-        <Route exact path="/search" component={SearchIndexContainer} />
+        <Route exact path="/search/:query" component={SearchIndexContainer} />
       </Switch>
 
       {/* Protected/ auth routes */}

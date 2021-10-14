@@ -40,7 +40,7 @@ class NavBarSearch extends React.Component {
   handleSearch(e) {
     this.props
       .fetchProducts(this.state.query)
-      .then((res) => this.props.history.push("/search"));
+      .then((res) => this.props.history.push(`/search/${this.state.query}`));
   }
 
   render() {

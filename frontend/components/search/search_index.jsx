@@ -2,10 +2,15 @@ import React from "react";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import { Link } from "react-router-dom";
+import { createCartItem } from "../../actions/cart_items_actions";
 
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchProducts(this.props.query);
   }
 
   showStars(rating) {
@@ -23,8 +28,8 @@ class SearchIndex extends React.Component {
 
   render() {
     const { products } = this.props;
-
-    const mappedSearchedProducts = !products ? (
+    console.log(products);
+    const mappedSearchedProducts = !products.length ? (
       <div>No products found</div>
     ) : (
       products.map((ele, i) => {
@@ -57,9 +62,6 @@ class SearchIndex extends React.Component {
                   <div>FREE One-Day</div>
                 </div>
               </div>
-            </div>
-            <div className="search-button-container">
-              <button>Add to cart</button>
             </div>
           </div>
         );
