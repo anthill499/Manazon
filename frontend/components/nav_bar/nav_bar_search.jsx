@@ -49,21 +49,25 @@ class NavBarSearch extends React.Component {
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
     return (
       <div className="nav-bar-search">
-        <div>
-          <Link to="/">
-            <img src={window.manazonLogo} id="amazon-logo" />
-          </Link>
-        </div>
-        <div id="select-address">
+        {/* logo and deliver to  */}
+        <div className="nb-logo-address">
           <div>
-            <img src={window.pin} id="nav-pin" />
+            <Link to="/">
+              <img src={window.manazonLogo} id="amazon-logo" />
+            </Link>
           </div>
-          <div>
-            <p className="nav-grey">{helloOrDeliver}</p>
-            Select your address
+          <div id="select-address">
+            <div>
+              <img src={window.pin} id="nav-pin" />
+            </div>
+            <div>
+              <p className="nav-grey">{helloOrDeliver}</p>
+              Select your address
+            </div>
           </div>
         </div>
 
+        {/* search bar group */}
         <div id="nav-bar-search-group">
           <select className="nav-bar-search-select">
             <option value="0">All: </option>
@@ -84,29 +88,34 @@ class NavBarSearch extends React.Component {
             <img src={window.mag} id="mag" />
           </button>
         </div>
-        <div
-          id="modal-trigger"
-          onMouseEnter={(e) => this.handleFocusOrBlur(e)}
-          onMouseLeave={(e) => this.handleFocusOrBlur(e)}
-          className="nav-hover">
-          <div id="account-lists">
-            <div>
-              <p className="nav-grey">Hello, {name}</p>
-            </div>
-            <div>Account {"&"} Lists</div>
-          </div>
-          {!this.state.hidden ? null : <NavBarModalContainer />}
-        </div>
-        <div>
-          <p className="nav-grey">Returns</p>
-          {"&"} Orders
-        </div>
 
-        <div className={("shopping-cart", "nav-hover")}>
-          <Link to="/cart_items">
-            <div id="cart-item-count">{this.props.allCartItems.length}</div>
-            <img src={window.cart} id="nav-cart" />
-          </Link>
+        {/* after search bar */}
+        <div className="nb-modal-cart">
+          <div
+            id="modal-trigger"
+            onMouseEnter={(e) => this.handleFocusOrBlur(e)}
+            onMouseLeave={(e) => this.handleFocusOrBlur(e)}
+            className="nav-hover">
+            <div id="account-lists">
+              <div>
+                <p className="nav-grey">Hello, {name}</p>
+              </div>
+              <div>Account {"&"} Lists</div>
+            </div>
+            {!this.state.hidden ? null : <NavBarModalContainer />}
+          </div>
+
+          <div>
+            <p className="nav-grey">Returns</p>
+            {"&"} Orders
+          </div>
+
+          <div className={("shopping-cart", "nav-hover")}>
+            <Link to="/cart_items">
+              <div id="cart-item-count">{this.props.allCartItems.length}</div>
+              <img src={window.cart} id="nav-cart" />
+            </Link>
+          </div>
         </div>
       </div>
     );
