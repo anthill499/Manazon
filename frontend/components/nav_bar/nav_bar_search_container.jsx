@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { fetchCartItems } from "../../actions/cart_items_actions";
 import { withRouter } from "react-router-dom";
 import { fetchProducts } from "../../actions/products_actions";
-const mapStateToProps = (
-  { session, entities: { users, cartItems, products } },
-  ownProps
-) => ({
+const mapStateToProps = ({
+  session,
+  entities: { users, cartItems, products },
+}) => ({
   currentUser: users[session.id],
   allCartItems: Object.values(cartItems),
   ProductIndex: Object.values(products),
