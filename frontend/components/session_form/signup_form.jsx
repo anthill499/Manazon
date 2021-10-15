@@ -4,6 +4,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.formData;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillUnmount() {
@@ -21,14 +22,25 @@ class SignupForm extends React.Component {
     this.props.processForm(this.state);
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    );
+  renderErrors(string) {
+    const errorsArr = this.props.errors;
+    const renderedArr = [];
+    errorsArr.forEach((ele) => {
+      if (ele.indexOf(string) !== -1) {
+        renderedArr.push(ele);
+      }
+    });
+    if (renderedArr.length !== 0) {
+      return (
+        <ul>
+          {renderedArr.map((error, i) => (
+            <li key={`error-${i}`}>{error}</li>
+          ))}
+        </ul>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -50,12 +62,16 @@ class SignupForm extends React.Component {
                 value={this.state.fullName}
                 onChange={this.handleInput("fullName")}
                 className="session-input"></input>
+              <div className="auth-errors">
+                {this.renderErrors("Full name")}
+              </div>
               <label className="session-label">Username</label>
               <input
                 type="text"
                 value={this.state.username}
                 onChange={this.handleInput("username")}
                 className="session-input"></input>
+              <div className="auth-errors">{this.renderErrors("Username")}</div>
               <label className="session-label">Email</label>
               <input
                 type="email"
@@ -71,8 +87,8 @@ class SignupForm extends React.Component {
                 className="session-input"
                 placeholder="At least 6 characters"
               />
+              <div className="auth-errors">{this.renderErrors("Password")}</div>
               <br />
-              {this.renderErrors()}
               <button className="session-button">
                 Create your Manazon account
               </button>

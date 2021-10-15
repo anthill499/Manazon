@@ -353,6 +353,14 @@ form {
   text-align: center;
 }
 
+.auth-errors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  color: red;
+}
+
 .background-img {
   flex-shrink: 1;
   width: 100%;

@@ -13,6 +13,7 @@
         <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
     </script>
    <% end %>
+   
    <meta property="og:title" content="Manazon" />
      <meta property='og:image' content="<%= image_url('manazongithub.png') %>"/>
      <meta property="og:description"
@@ -36,9 +37,7 @@
         window.manazonfavicon = "<%= image_url('manazonfavicon.ico') %>"
     </script>
     <link rel="shortcut icon" type="image" href="<%= image_url('manazonfavicon.ico') %>" />
-
   </head>
-
   <body>
     <%= yield %>
   </body>
