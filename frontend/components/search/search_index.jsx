@@ -36,21 +36,13 @@ class SearchIndex extends React.Component {
           <div key={i} className="search-flex-container">
             <div className="search-pic-n-text">
               <div>
-                <Link
-                  to={`/products/${ele.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer">
+                <Link to={`/products/${ele.id}`}>
                   <img src={ele.photoUrl} className="search-product-img" />
                 </Link>
               </div>
               <div className="search-product-details">
                 <div className="search-product-title">
-                  <Link
-                    to={`/products/${ele.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    {ele.title}
-                  </Link>
+                  <Link to={`/products/${ele.id}`}>{ele.title}</Link>
                 </div>
                 <div>{this.showStars(ele.rating)}</div>
                 <div className="search-product-price">${ele.price}</div>

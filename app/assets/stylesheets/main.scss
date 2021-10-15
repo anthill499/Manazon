@@ -336,16 +336,6 @@ form {
   border: 0.5px black;
   align-items: center;
   cursor: pointer;
-  // box-sizing: border-box;
-}
-
-// .hovered-category {
-//   max-height: 19px;
-//   min-width: 248px;
-// }
-
-.nav-hover:hover {
-  outline: 1px solid white;
 }
 
 .auth-modal-child {
@@ -399,6 +389,7 @@ form {
 .swipe-icons:hover {
   filter: opacity(80%);
 }
+
 #swipe-left {
   transform: rotate(180deg);
 }
@@ -1024,13 +1015,23 @@ a:visited {
 }
 
 .cart-item-wrapper {
-  // display: flex;
   background-color: white;
   margin-left: 30px;
   padding: 40px;
   margin-top: 50px;
   width: 95%;
   border: 2px solid #e2e2e2;
+}
+
+.purchase-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thank-you {
+  font-size: 30px;
+  color: rgb(9, 130, 36);
 }
 
 .checkout-button-container {

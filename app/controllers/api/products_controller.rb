@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
     
     #front/end
     def index
-        @products = query ? @products = Product.all.select { |product| product.title.downcase.include?(query.downcase)} : Product.all
+        @products = query ? @products = Product.all.select { |product| product.title.downcase.include?(query.downcase) || product.description.downcase.include?(query.downcase)} : Product.all
         render :index
     end
 
