@@ -20,7 +20,6 @@ class CartIndexItem extends React.Component {
 
   handleQuantityChange(e) {
     e.preventDefault();
-    console.log(e.currentTarget.value);
     this.props
       .updateCartItem({
         productQuantity: parseInt(e.currentTarget.value),

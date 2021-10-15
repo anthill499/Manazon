@@ -10,7 +10,9 @@ class NavBarSearch extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCartItems();
+    if (this.props.currentUser) {
+      this.props.fetchCartItems();
+    }
   }
 
   handleFocusOrBlur(e) {
@@ -47,6 +49,7 @@ class NavBarSearch extends React.Component {
     const user = this.props.currentUser;
     const name = user ? user.fullName.split(" ")[0] : "Sign in";
     const helloOrDeliver = user ? `Deliver to ${name}` : "Hello";
+    const cartCounter = !user ? 0 : this.props.allCartItems.length;
     return (
       <div className="nav-bar-search">
         {/* logo and deliver to  */}
@@ -112,7 +115,7 @@ class NavBarSearch extends React.Component {
 
           <div className={("shopping-cart", "nav-hover")}>
             <Link to="/cart_items">
-              <div id="cart-item-count">{this.props.allCartItems.length}</div>
+              <div id="cart-item-count">{cartCounter}</div>
               <img src={window.cart} id="nav-cart" />
             </Link>
           </div>

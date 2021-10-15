@@ -28,7 +28,6 @@ class SearchIndex extends React.Component {
 
   render() {
     const { products } = this.props;
-    console.log(products);
     const mappedSearchedProducts = !products.length ? (
       <div>No products found</div>
     ) : (

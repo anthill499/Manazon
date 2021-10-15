@@ -22,7 +22,6 @@ export const createCartItem = (cartItem) => {
 
 export const updateCartItem = (cartItem) => {
   const humpedCartItem = humps.decamelizeKeys(cartItem);
-  console.log(cartItem);
   return $.ajax({
     url: `/api/cart_items/${cartItem.id}`,
     method: "PATCH",

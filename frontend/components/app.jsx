@@ -82,14 +82,35 @@ const App = ({ store }) => {
         <div className="extra-links-two">
           <ul>
             <li>
-              <a href="https://github.com/anthill499">Github</a>
+              <a
+                href="https://github.com/anthill499"
+                target="_blank"
+                rel="noopener noreferrer">
+                Github
+              </a>
             </li>
             <li>
-              <a href="https://angel.co/u/anthony-huang-8">AngelList</a>
+              <a
+                href="https://angel.co/u/anthony-huang-8"
+                target="_blank"
+                rel="noopener noreferrer">
+                AngelList
+              </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/anthonyhuang499/">
+              <a
+                href="https://www.linkedin.com/in/anthonyhuang499/"
+                target="_blank"
+                rel="noopener noreferrer">
                 LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.anthonyhuang.dev"
+                target="_blank"
+                rel="noopener noreferrer">
+                Portfolio
               </a>
             </li>
           </ul>
