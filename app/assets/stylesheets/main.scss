@@ -353,7 +353,7 @@ form {
 
 .background-img {
   flex-shrink: 1;
-  width: 100%;
+  width: 75%;
   max-height: 80%;
   -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent);
   mask-image: none;
@@ -361,8 +361,7 @@ form {
   top: 0;
   left: 0;
   right: 0;
-  background-size: cover;
-  align-content: center;
+  margin: auto;
 }
 
 #swipers {
@@ -424,6 +423,7 @@ form {
 
 #import-div {
   position: relative;
+  background-color: #eaeded;
 }
 .product-showings-group {
   display: flex;
@@ -432,7 +432,8 @@ form {
   gap: 20px;
   top: 60%;
   padding-top: 350px;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
+  background-color: #eaeded;
 }
 
 .product-group {
