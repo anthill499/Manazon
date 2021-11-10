@@ -3,7 +3,7 @@ import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import { Link } from "react-router-dom";
 import { createCartItem } from "../../actions/cart_items_actions";
-
+// hello
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
